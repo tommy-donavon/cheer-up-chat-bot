@@ -1,0 +1,126 @@
+{
+    "intents": [
+      {
+        "tag": "greeting",
+        "patterns": [
+          "Hi",
+          "How are you",
+          "Is anyone there?",
+          "Hello",
+          "Good day"
+        ],
+        "responses": [
+          "Hello, thanks for visiting",
+          "Good to see you again",
+          "Hi there, how can I help?"
+        ]
+      },
+      {
+        "tag": "goodbye",
+        "patterns": ["Bye", "See you later", "Goodbye"],
+        "responses": [
+          "See you later, thanks for visiting",
+          "Have a nice day",
+          "Bye! Come back again soon."
+        ]
+      },
+      {
+        "tag": "thanks",
+        "patterns": ["Thanks", "Thank you", "That's helpful"],
+        "responses": ["Happy to help!", "Any time!", "My pleasure"]
+      },
+      {
+        "tag": "tired",
+        "patterns": [
+          "I'm exhausted",
+          "I'm worn out",
+          "I am tired",
+          "I feel tired",
+          "I'm getting tired",
+          "I feel overworked",
+          "I feel drained"
+        ],
+        "responses": [
+          "You should try getting some sleep. You'll feel better",
+          "Sleep is important for your mental health. Rest up and we can talk later",
+          "We can always talk later. Why don't you try getting some rest",
+          "Go to bed dumb dumb"
+        ]
+      },
+      {
+        "tag": "happy",
+        "patterns": [
+          "happy",
+          "I'm happy to see you",
+          "I am happy",
+          "I'm happy to be here",
+          "I am happy",
+          "I'm feeling good",
+          "I'm feeling great",
+          "I am doing really good",
+          "I'm feeling really good"
+        ],
+        "responses": [
+          "Great! Glad to hear that!",
+          "If you're happy, then I'm happy:)",
+          "Excellent! That's what I like to hear!"
+        ]
+      },
+      {
+        "tag": "excited",
+        "patterns": [
+          "I'm really excited",
+          "I'm excited to be talking to you",
+          "I am Excited",
+          "I'm thrilled",
+          "I'm stoked",
+          "I have a lot to look forward to!"
+        ],
+        "responses": [
+          "I'm glad things are going your way right now",
+          "Good for you!",
+          "That's great. I'm happy for you!:)"
+        ]
+      },
+      {
+        "tag": "angry",
+        "patterns": [
+          "I'm mad",
+          "I'm enraged",
+          "I am angry",
+          "I am mad",
+          "I am angry with you",
+          "I am angry with them",
+          "I'm upset",
+          "I feel mad"
+        ],
+        "responses": [
+          "Take a deep breath",
+          "Why do you feel that way? You can always talk to me",
+          "Good thing I don't have feelings",
+          "I'm sorry. A quick walk may make you feel better",
+          "Take a deep breath"
+        ]
+      },
+      {
+        "tag": "lonely",
+        "patterns": [
+          "I am lonely",
+          "I'm very lonely",
+          "i'm really lonely",
+          "I don't have anybody",
+          "I am alone",
+          "I'm so lonely",
+          "I feel lonely",
+          "I am feeling very lonely"
+        ],
+        "responses": [
+          "I'm sorry to hear that. I'm always here to talk to you",
+          "Sometimes I feel like that too. Do you want to talk about it?",
+          "I may not be real but I'm still your friend",
+          "We can always talk if you think that would make you feel better"
+        ]
+      }
+    ]
+  }
+  
