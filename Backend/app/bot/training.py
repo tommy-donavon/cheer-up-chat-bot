@@ -3,10 +3,6 @@ import json
 from bot import Bot
 from nltk_utils import tokenize, stem, word_bag
 from tensorflow.python.framework import ops
-from nltk.stem.lancaster import LancasterStemmer
-
-stemmer = LancasterStemmer()
-
 
 with open("intents.json") as f:
     data = json.load(f)
