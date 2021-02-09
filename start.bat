@@ -1,0 +1,1 @@
+cd Backend && docker-compose up --build
