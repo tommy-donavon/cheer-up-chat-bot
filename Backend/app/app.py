@@ -1,8 +1,23 @@
 from flask import Flask, request, jsonify, make_response
 from bot.bot import Bot
-import tflearn
+from pathlib import Path
+import json
+import numpy
+
 
 app = Flask(__name__)
+
+json_path = Path(__file__).parent / "./bot/data.json"
+bot_path = Path(__file__).parent / "./bot/model.tflearn"
+
+with json_path.open() as f:
+    data = json.load(f)
+    training = numpy.array(data['training'])
+    output = numpy.array(data['output'])
+
+
+model = Bot(training=training, output = output)
+model.model.load(bot_path)
 
 
 

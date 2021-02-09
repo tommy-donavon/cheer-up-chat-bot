@@ -1,8 +1,10 @@
 import numpy
 import json
+
 from bot import Bot
 from nltk_utils import tokenize, stem, word_bag
 from tensorflow.python.framework import ops
+
 
 with open("intents.json") as f:
     data = json.load(f)
@@ -46,13 +48,20 @@ with open("intents.json") as f:
         training.append(bag)
         output.append(output_row)
     
+    data = {"training": training, "output": output}
+    with open("data.json", "w") as save_data:
+        json.dump(data, save_data)
+
+
     training = numpy.array(training)
     output = numpy.array(output)
 
     ops.reset_default_graph()
 
+
+
     model = Bot(training=training, output=output)
-    model.model.fit(training, output, n_epoch=1000, batch_size=8, show_metric=True)
+    model.model.fit(training, output, n_epoch=10, batch_size=8, show_metric=True)
     model.model.save("model.tflearn")
 
 
