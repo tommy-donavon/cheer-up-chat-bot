@@ -10,10 +10,11 @@ def tokenize(sentence: str):
 def stem(word: str):
     return stemmer.stem(word.lower())
 
-def word_bag(token_sentence: str, words):
-    token_sentence = [stem(w) for w in words]
-    bag = [0 for _ in words]
-    for index, word in enumerate(words):
-        if word in token_sentence:
-            bag[index] = 1
+def word_bag(token_sentence, words):
+    token_sentence = [stem(w) for w in token_sentence]
+    bag = [0 for _ in range(len(words))]
+    for word in token_sentence:
+        for index, w in enumerate(words):
+            if w == word:
+                bag[index] = 1
     return numpy.array(bag)

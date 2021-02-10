@@ -1,4 +1,3 @@
-from nltk import tag
 import numpy
 import json
 
@@ -37,11 +36,11 @@ with open("intents.json") as f:
     out_default = [0 for _ in range(len(data_tags))]
 
     for x, doc in enumerate(doc_words):
-        bag = [0 for _ in all_data_words]
+        bag = [0 for _ in range(len(all_data_words))]
         b_words = [stem(w.lower()) for w in doc]
-        for word in all_data_words:
+        for index, word in enumerate(all_data_words):
             if word in b_words:
-                bag[x] = 1
+                bag[index] = 1
         
         output_row = out_default[:]
         output_row[data_tags.index(doc_tags[x])] = 1
@@ -62,10 +61,6 @@ with open("intents.json") as f:
 
 
     model = Bot(training=training, output=output)
-    model.model.fit(training, output, n_epoch=10000, batch_size=8, show_metric=True)
+    model.model.fit(training, output, n_epoch=1000, batch_size=8, show_metric=True)
     model.model.save("model.tflearn")
-
-
     
-
-

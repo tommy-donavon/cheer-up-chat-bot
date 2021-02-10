@@ -46,7 +46,7 @@ def bot_response():
         
 
     else:
-        return jsonify({"status":"Bad_Request"}), 400
+        return jsonify({"status":"Please include a message"}), 400
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
