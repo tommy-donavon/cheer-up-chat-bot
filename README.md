@@ -1,6 +1,6 @@
 # cheer-up-chat-bot
 
-Cheer-up Chatbot is a simple anroid based chat service that uses intent-based machine learning techinques to process user emotion  
+Cheer-up Chatbot is a simple android based chat service that uses intent-based machine learning techinques to process user emotion  
 
 # Start Backend
 
