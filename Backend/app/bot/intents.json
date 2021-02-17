@@ -7,21 +7,46 @@
         "How are you",
         "Is anyone there?",
         "Hello",
-        "Good day"
+        "Good day",
+        "howdy",
+        "welcome", 
+        "bonjour", 
+        "buenas noches",
+        "buenos dias",
+        "hey",
+        "what's up",
+        "greetings",
+        "how goes it",
+        "whats happening"
       ],
       "responses": [
         "Hello, thanks for visiting",
         "Good to see you again",
-        "Hi there, how can I help?"
+        "Hi there, how can I help?",
+        "Why hello there, anything I can help yo with?"
       ]
     },
     {
       "tag": "goodbye",
-      "patterns": ["Bye", "See you later", "Goodbye"],
+      "patterns": [
+        "Bye", 
+        "See you later", 
+        "Goodbye",
+        "farewell",
+        "adieu",
+        "adios",
+        "bye-bye",
+        "ciao",
+        "sayonara",
+        "so long",
+        "see you",
+        "Catch you later"
+      ],
       "responses": [
         "See you later, thanks for visiting",
         "Have a nice day",
-        "Bye! Come back again soon."
+        "Bye! Come back again soon.",
+        "See ya!"
       ]
     },
     {
@@ -34,7 +59,10 @@
         "thx",
         "cheers",
         "good thanks",
-        "very good thank you"
+        "very good thank you",
+        "much-obliged",
+        "You really helped",
+        "I needed that, thanks"
       ],
       "responses": [
         "Happy to help!",
@@ -54,13 +82,20 @@
         "I feel tired",
         "I'm getting tired",
         "I feel overworked",
-        "I feel drained"
+        "I feel drained",
+        "I want to sleep",
+        "I'm beat",
+        "All I want is to just sleep right now",
+        "so tired"
       ],
       "responses": [
         "You should try getting some sleep. You'll feel better",
         "Sleep is important for your mental health. Rest up and we can talk later",
         "We can always talk later. Why don't you try getting some rest",
-        "Go to bed dumb dumb"
+        "Go to bed dumb dumb",
+        "Maybe you should sleep then!",
+        "Why don't you go to bed then?",
+        "How about you try sleeping"
       ]
     },
     {
@@ -74,7 +109,8 @@
         "I'm feeling good",
         "I'm feeling great",
         "I am doing really good",
-        "I'm feeling really good"
+        "I'm feeling really good",
+        "doing good"
       ],
       "responses": [
         "Great! Glad to hear that!",
@@ -115,7 +151,8 @@
         "Why do you feel that way? You can always talk to me",
         "Good thing I don't have feelings",
         "I'm sorry. A quick walk may make you feel better",
-        "Take a deep breath"
+        "Take a deep breath",
+        "Have you tried punching something? Preferably not a person"
       ]
     },
     {
@@ -128,13 +165,18 @@
         "I am alone",
         "I'm so lonely",
         "I feel lonely",
-        "I am feeling very lonely"
+        "I am feeling very lonely",
+        "I want to die",
+        "I feel like commiting suicide",
+        "why does no one like me",
+        "no one loves me"
       ],
       "responses": [
         "I'm sorry to hear that. I'm always here to talk to you",
         "Sometimes I feel like that too. Do you want to talk about it?",
         "I may not be real but I'm still your friend",
-        "We can always talk if you think that would make you feel better"
+        "We can always talk if you think that would make you feel better",
+        "Life is hard sometimes, remember that these times will eventully pass"
       ]
     }
   ]
