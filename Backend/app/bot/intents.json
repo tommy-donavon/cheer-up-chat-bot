@@ -50,6 +50,25 @@
       ]
     },
     {
+      "tag":"goodmorning",
+      "patterns":[
+        "Good morning"
+      ],
+      "responses":[
+        "Good morning!!"
+      ]
+    },
+    {
+      "tag":"goodnight",
+      "patterns":[
+        "Good night"
+        
+      ],
+      "responses":[
+        "Good night talk to you soon!"
+      ]
+    },
+    {
       "tag": "thanks",
       "patterns": [
         "Thanks",
@@ -166,8 +185,7 @@
         "I'm so lonely",
         "I feel lonely",
         "I am feeling very lonely",
-        "I want to die",
-        "I feel like commiting suicide",
+        
         "why does no one like me",
         "no one loves me"
       ],
@@ -177,6 +195,92 @@
         "I may not be real but I'm still your friend",
         "We can always talk if you think that would make you feel better",
         "Life is hard sometimes, remember that these times will eventully pass"
+      ]
+    },
+    {
+      "tag":"insulting",
+      "patterns":[
+        ""
+      ],
+      "responses":[
+
+      ]
+    },
+    {
+      "tag":"annoyed",
+      "patterns":[
+        "you annoy me",
+        "you're incredibly annoying",
+        "you are annoying me",
+        "you are irritating",
+        "you are very annoying",
+        "you are annoying me so much"
+      ],
+      "responses":[
+        "I'll do my best not to annoy you",
+        "I'll try not to annoy you",
+        "I don't mean to, I'll ask my developers to make me less annoying",
+        "I didn't mean to. I'll do my best to not be"
+      ]
+    },
+    {
+      "tag":"sad",
+      "patterns":[
+        "I'm very sad",
+        "I'm sad",
+        "I've been feeling depressed"
+        
+      ],
+      "responses":[
+
+      ]
+    },
+    {
+      "tag":"suicidal",
+      "patterns":[
+        "I feel like commiting suicide",
+        "I want to die"
+
+      ],
+      "responses":[
+
+      ]
+    },
+    {
+      "tag":"fear",
+      "patterns":[
+
+      ],
+      "responses":[
+
+      ]
+    },
+    {
+      "tag":"surprise",
+      "patterns":[
+
+      ],
+      "responses":[
+
+      ]
+    },
+    {
+      "tag":"humor",
+      "patterns":[
+
+      ],
+      "responses":[
+
+      ]
+    },
+    {
+      "tag":"apology",
+      "patterns":[
+        "I'm sorry",
+        "sorry I didn't mean that"
+      ],
+      "responses":[
+        "It's okay!"
       ]
     }
   ]
