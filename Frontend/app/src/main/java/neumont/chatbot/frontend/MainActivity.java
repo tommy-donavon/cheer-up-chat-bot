@@ -2,7 +2,9 @@ package neumont.chatbot.frontend;
 
 
 import android.content.Intent;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.text.format.Formatter;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -44,9 +46,11 @@ public class MainActivity extends AppCompatActivity {
     public void signUpOnClick(View view) {
     }
 
+
     public void testConnection(String userMessage) {
+
         RequestQueue rq = Volley.newRequestQueue(this);
-        String URL = "http://10.0.0.216:8080/";
+        String URL = "http://10.0.2.2:8080/";
         JSONObject jb = new JSONObject();
         try {
             jb.put("message", userMessage);
