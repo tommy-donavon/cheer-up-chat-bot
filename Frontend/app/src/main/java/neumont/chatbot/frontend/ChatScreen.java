@@ -2,6 +2,7 @@ package neumont.chatbot.frontend;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.util.Log;
@@ -19,11 +20,14 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.concurrent.TimeUnit;
+
 public class ChatScreen extends AppCompatActivity {
     private EditText message;
     private TextView response, aiResponse;
     private ScrollView messages;
     private SpannableStringBuilder ssb = new SpannableStringBuilder();
+    private String typing = "typing...";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +58,9 @@ public class ChatScreen extends AppCompatActivity {
             try {
                 System.out.println(response);
                 String ok = (String) response.get("bot");
-                this.response.append("Bot: " + ok + "\n\n");
-            } catch (JSONException e) {
+                TimeUnit.SECONDS.sleep(2);
+                this.response.append(typing.replace(typing,"Bot: " + ok + "\n\n"));
+            } catch (JSONException | InterruptedException e) {
                 e.printStackTrace();
             }
 
@@ -68,9 +73,25 @@ public class ChatScreen extends AppCompatActivity {
         String messageText = message.getText().toString();
         testConnection(messageText);
 
-        response.append("User: " + messageText + "\n");
+        response.append("User: " + messageText + "\n" + typing + "\n");
+
+        message.setText("");
+
 
 
     }
 
+    public void clearMessages(View view) {
+        response.setText("");
+    }
+
+    public void backToChatHistoryScreen(View view) {
+        Intent intent = new Intent(this, ChatHistory.class);
+        startActivity(intent);
+    }
+
+    public void backToHomeScreen(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }

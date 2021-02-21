@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_1"
+    android:backgroundTintMode="src_in"
     tools:context=".ChatScreen">
 
     <TextView
@@ -39,14 +40,22 @@
 
     <ScrollView
         android:id="@+id/svMessages"
-        android:layout_width="402dp"
-        android:layout_height="358dp"
+        android:layout_width="413dp"
+        android:layout_height="359dp"
+        android:background="#FFFFFF"
+        android:padding="2sp"
+        android:paddingStart="2sp"
+        android:paddingLeft="2sp"
+        android:paddingTop="2sp"
+        android:paddingEnd="2sp"
+        android:paddingRight="2sp"
+        android:paddingBottom="2sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.351">
+        app:layout_constraintVertical_bias="0.329">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -57,8 +66,10 @@
                 android:id="@+id/tvResponse"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="casual"
                 android:textColor="#000000"
                 android:textSize="18sp" />
+
         </LinearLayout>
     </ScrollView>
 
@@ -66,7 +77,9 @@
         android:id="@+id/etMessage"
         android:layout_width="311dp"
         android:layout_height="41dp"
+        android:background="@drawable/rectangle"
         android:ems="10"
+        android:gravity="center"
         android:hint="Speak to the bot"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -74,19 +87,64 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.847" />
+        app:layout_constraintVertical_bias="0.81" />
 
     <Button
         android:id="@+id/btnSubmitMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/custom_circle"
+        android:backgroundTint="#161617"
+        android:backgroundTintMode="add"
         android:onClick="submitMessage"
         android:text="Submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.003"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.847" />
+        app:layout_constraintVertical_bias="0.808" />
+
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_circle"
+        android:onClick="clearMessages"
+        android:text="Clear Messages"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.934"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_circle"
+        android:onClick="backToChatHistoryScreen"
+        android:text="Back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView5"
+        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_circle"
+        android:onClick="backToHomeScreen"
+        android:text="Back to Home"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView5"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
