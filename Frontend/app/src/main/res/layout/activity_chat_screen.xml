@@ -7,18 +7,86 @@
     android:background="@drawable/gradient_1"
     tools:context=".ChatScreen">
 
-    <ScrollView
-        android:layout_width="407dp"
-        android:layout_height="299dp"
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="413dp"
+        android:layout_height="79dp"
+        android:background="#000000"
+        android:text="topLayerBlackBar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.217">
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="413dp"
+        android:layout_height="79dp"
+        android:background="#000000"
+        android:gravity="center"
+        android:text="Chat Screen"
+        android:textColor="#FFFFFF"
+        android:textDirection="firstStrongRtl"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ScrollView
+        android:id="@+id/svMessages"
+        android:layout_width="402dp"
+        android:layout_height="358dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.351">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvResponse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+        </LinearLayout>
     </ScrollView>
+
+    <EditText
+        android:id="@+id/etMessage"
+        android:layout_width="311dp"
+        android:layout_height="41dp"
+        android:ems="10"
+        android:hint="Speak to the bot"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.847" />
+
+    <Button
+        android:id="@+id/btnSubmitMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="submitMessage"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.003"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.847" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
