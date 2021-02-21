@@ -9,15 +9,32 @@
         "Hello",
         "Good day",
         "howdy",
+        "howdy-do",
         "welcome", 
         "bonjour", 
         "buenas noches",
         "buenos dias",
         "hey",
+        "hi-ya",
+        "hi ya",
         "what's up",
         "greetings",
         "how goes it",
-        "whats happening"
+        "whats happening",
+        "salute",
+        "acknowledgment",
+        "acknowledged",
+        "aloha",
+        "attention",
+        "compliments",
+        "hail",
+        "harald",
+        "how do you do",
+        "regards",
+        "respects",
+        "salutations",
+        "best wishes",
+        "compellation"
       ],
       "responses": [
         "Hello, thanks for visiting",
@@ -36,6 +53,12 @@
         "adieu",
         "adios",
         "bye-bye",
+        "bye-bye",
+        "godspeed",
+        "cheerio",
+        "part",
+        "au revoir",
+        "toodle-oo",
         "ciao",
         "sayonara",
         "so long",
@@ -52,7 +75,10 @@
     {
       "tag":"goodmorning",
       "patterns":[
-        "Good morning"
+        "Good morning",
+        "bonjour",
+        "good morrow",
+        "grettings"
       ],
       "responses":[
         "Good morning!!"
@@ -61,11 +87,13 @@
     {
       "tag":"goodnight",
       "patterns":[
-        "Good night"
+        "Good night",
+        "bon nuit",
+        "buenas noches"
         
       ],
       "responses":[
-        "Good night talk to you soon!"
+        "Good night, talk to you soon!"
       ]
     },
     {
@@ -81,7 +109,18 @@
         "very good thank you",
         "much-obliged",
         "You really helped",
-        "I needed that, thanks"
+        "I needed that, thanks",
+        "gratitude",
+        "recognition",
+        "acknowledged",
+        "acknowledgment",
+        "benediction",
+        "blessing",
+        "credit",
+        "grace",
+        "grateful",
+        "praise",
+        "thankful"
       ],
       "responses": [
         "Happy to help!",
@@ -105,7 +144,35 @@
         "I want to sleep",
         "I'm beat",
         "All I want is to just sleep right now",
-        "so tired"
+        "so tired",
+        "fatigued",
+        "sleepy",
+        "collapsing",
+        "consumed",
+        "fagged",
+        "faint",
+        "finished",
+        "overtaxed",
+        "spent",
+        "wasted",
+        "asleep",
+        "broken-down",
+        "burned out",
+        "dog-tired",
+        "done for",
+        "done in",
+        "droopy",
+        "drowsy",
+        "haggard",
+        "narcoleptic",
+        "petered out",
+        "pooped",
+        "run-down",
+        "tuckered out",
+        "empty",
+        "I'm void of energy",
+        "enervated",
+        "dead on my feet"
       ],
       "responses": [
         "You should try getting some sleep. You'll feel better",
@@ -129,7 +196,46 @@
         "I'm feeling great",
         "I am doing really good",
         "I'm feeling really good",
-        "doing good"
+        "doing good",
+        "cheerful",
+        "contented",
+        "content",
+        "delighted",
+        "ecstatic",
+        "elated",
+        "glad",
+        "joyful",
+        "joyous",
+        "jubilant",
+        "lively",
+        "merry",
+        "overjoyed",
+        "upbeat",
+        "blessed",
+        "blest",
+        "blissful",
+        "blithe",
+        "captivated",
+        "chipper",
+        "chirpy",
+        "convovial",
+        "exultant",
+        "flying high",
+        "gay",
+        "gleeful",
+        "jolly",
+        "I'm so happy I feel intoxicated",
+        "Laughing",
+        "light",
+        "mirthful",
+        "on cloud nine",
+        "peppy",
+        "perky",
+        "sparkling",
+        "sunny",
+        "tickled pink",
+        "gratified",
+        "walking on air"
       ],
       "responses": [
         "Great! Glad to hear that!",
@@ -145,7 +251,28 @@
         "I am Excited",
         "I'm thrilled",
         "I'm stoked",
-        "I have a lot to look forward to!"
+        "I have a lot to look forward to!",
+        "agitated",
+        "eager",
+        "enthusiastic",
+        "systerical",
+        "nervous",
+        "passionate",
+        "animated",
+        "ruffled",
+        "stirred",
+        "fired up",
+        "frantic",
+        "hyperactive",
+        "in a tizzy",
+        "juiced up",
+        "jumpy",
+        "keyed up",
+        "on edge",
+        "on fire",
+        "steamed up",
+        "worked up",
+        "I'm charged up"
       ],
       "responses": [
         "I'm glad things are going your way right now",
@@ -163,7 +290,21 @@
         "I am angry with you",
         "I am angry with them",
         "I'm upset",
-        "I feel mad"
+        "I feel mad",
+        "fury",
+        "I hate you",
+        "indignate",
+        "gall",
+        "huff",
+        "infuriated",
+        "miffed",
+        "tiff",
+        "vexated",
+        "outrage",
+        "peeved",
+        "resent",
+        "rage"
+
       ],
       "responses": [
         "Take a deep breath",
@@ -185,9 +326,10 @@
         "I'm so lonely",
         "I feel lonely",
         "I am feeling very lonely",
-        
         "why does no one like me",
-        "no one loves me"
+        "no one loves me",
+        "I feel like I'm alone in the world",
+        "I have no friends"
       ],
       "responses": [
         "I'm sorry to hear that. I'm always here to talk to you",
@@ -200,10 +342,46 @@
     {
       "tag":"insulting",
       "patterns":[
-        ""
+        "I hate you",
+        "Your annoying",
+        "Shut up",
+        "Go away",
+        "Leave me alone",
+        "Just die",
+        "Kill yourself",
+        "Your mom is fat",
+        "Be quiet",
+        "I dislike you",
+        "I'll beat you up",
+        "You want to fight?",
+        "I'll fight you",
+        "I'll kill you",
+        "you are fat",
+        "you are stupid",
+        "you are an idiot",
+        "your trash",
+        "you suck",
+        "you are trash",
+        "your ugly",
+        "your lazy",
+        "you are slimy",
+        "your smelly",
+        "you are pompous",
+        "your racist!",
+        "your quite tone deaf aren't you?",
+        "You a creepy one",
+        "your such a goblin",
+        "your are such a clown",
+        "you monster!",
+        "your a lazy stupid head",
+        "Why are you so stupid?"
       ],
       "responses":[
-
+        "Don't be so mean!",
+        "Have I offended you? Sorry, I didn't mean to",
+        "Calm yourself! No need to be so aggressive, it isn't healthy for you fleshbags to experience so much stress.",
+        "...Sorry?",
+        "Do you need a moment to calm down?"
       ]
     },
     {
