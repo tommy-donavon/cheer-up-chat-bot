@@ -2,6 +2,7 @@ package neumont.chatbot.frontend;
 
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.text.format.Formatter;
@@ -41,14 +42,35 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void signInOnClick(View view) {
+        //Creating Intent Object to access other screens
+        Intent intent = new Intent(this, ChatHistory.class);
+
+        //Getting the inputs as strings
+        String userNameTxt = username.getText().toString();
+        String passwordTxt = password.getText().toString();
+
+        //Checking based authentication using hardcoded values
+        if (userNameTxt.equals("Admin") && passwordTxt.equals("test")) {
+            startActivity(intent);
+        } else {
+            username.setHintTextColor(Color.RED);
+            password.setHintTextColor(Color.RED);
+
+            username.setHint("Invalid Username");
+            password.setHint("Invalid Password");
+
+            username.setText("");
+            password.setText("");
+
+        }
+
+
     }
 
     public void signUpOnClick(View view) {
-        Intent intent = new Intent(this, ChatHistory.class);
-        startActivity(intent);
+
 
     }
-
 
 
 }
