@@ -1,10 +1,11 @@
+import json
+import numpy
+import random
+
 from flask import Flask, request, jsonify, make_response
 from bot.bot import Bot
 from bot import nltk_utils
 from pathlib import Path
-import json
-import numpy
-import random
 
 
 app = Flask(__name__)
@@ -36,13 +37,14 @@ def bot_response():
         user_input = nltk_utils.tokenize( raw_data['message'] )
         user_bag = nltk_utils.word_bag(user_input, all_words)
         results = model.model.predict([user_bag])
+        props = numpy.max(results)
         matching_index = numpy.argmax(results)
         tag = tags[matching_index]
         responses = []
         for t in intent_data['intents']:
             if t['tag'] == tag:
                 responses = t['responses']
-        return jsonify({"bot": random.choice(responses)}), 200
+        return jsonify({"bot": random.choice(responses), "chance": f"{props}"}), 200
         
 
     else:
