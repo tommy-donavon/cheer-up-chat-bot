@@ -28,6 +28,8 @@ with data_path.open() as f:
 model = Bot(training=training, output = output)
 model.model.load(bot_path)
 
+follow_up_responses = ["I didn't quite get that.", "Sorry what was that?", "uhh what was that.", "Can you repeat that?"]
+
 
 
 @app.route('/', methods=['POST'])
@@ -41,10 +43,13 @@ def bot_response():
         matching_index = numpy.argmax(results)
         tag = tags[matching_index]
         responses = []
-        for t in intent_data['intents']:
-            if t['tag'] == tag:
-                responses = t['responses']
-        return jsonify({"bot": random.choice(responses), "chance": f"{props}"}), 200
+        if props >= .75:
+            for t in intent_data['intents']:
+                if t['tag'] == tag:
+                    responses = t['responses']
+            return jsonify({"bot": random.choice(responses), "chance": f"{props}"}), 200
+        else: 
+            return jsonify({"bot":random.choice(follow_up_responses), "chance": f"{props}"}), 200
         
 
     else:
