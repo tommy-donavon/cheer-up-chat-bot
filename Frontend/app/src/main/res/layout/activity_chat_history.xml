@@ -67,18 +67,22 @@
         app:layout_constraintVertical_bias="0.023" />
 
     <ScrollView
-        android:layout_width="394dp"
-        android:layout_height="565dp"
-        android:background="#00BCD4"
+        android:id="@+id/svChatHistory"
+        android:layout_width="411dp"
+        android:layout_height="506dp"
+        android:background="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4">
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.471">
 
         <LinearLayout
+            android:id="@+id/chatLinearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
         </LinearLayout>
     </ScrollView>

@@ -32,6 +32,13 @@ public class ChatScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        try
+        {
+            this.getSupportActionBar().hide();
+        }
+        catch (NullPointerException e){
+            e.printStackTrace();
+        }
         setContentView(R.layout.activity_chat_screen);
 
         message = findViewById(R.id.etMessage);
@@ -59,7 +66,8 @@ public class ChatScreen extends AppCompatActivity {
                 System.out.println(response);
                 String ok = (String) response.get("bot");
                 TimeUnit.SECONDS.sleep(2);
-                this.response.append(typing.replace(typing,"Bot: " + ok + "\n\n"));
+                this.response.append("Bot: " + ok + "\n\n");
+
             } catch (JSONException | InterruptedException e) {
                 e.printStackTrace();
             }
@@ -76,9 +84,6 @@ public class ChatScreen extends AppCompatActivity {
         response.append("User: " + messageText + "\n" + typing + "\n");
 
         message.setText("");
-
-
-
     }
 
     public void clearMessages(View view) {

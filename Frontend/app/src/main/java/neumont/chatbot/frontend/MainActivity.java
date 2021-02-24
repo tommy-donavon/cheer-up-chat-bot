@@ -28,6 +28,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        try
+        {
+            this.getSupportActionBar().hide();
+        }
+        catch (NullPointerException e){
+            e.printStackTrace();
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         username = findViewById(R.id.etUsername);
@@ -49,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         String userNameTxt = username.getText().toString();
         String passwordTxt = password.getText().toString();
 
-        //Checking based authentication using hardcoded values
+        //Checking based on authentication using hardcoded values
         if (userNameTxt.equals("Admin") && passwordTxt.equals("test")) {
             startActivity(intent);
         } else {
