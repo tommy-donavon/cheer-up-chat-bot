@@ -17,6 +17,7 @@ The Cheer-Up ChatBot comes in two parts: A Backend API and a frontend android ap
 
 ### Start Backend:
 To start the backend service please click the start windows batch file found in the root project directory. If the batch file fails to start the API please access the backend directory through a windows command prompt and run the following command:
+- Make sure you do not have any services currently running on port 8080
 
 ```bash
 docker-compose up --build
@@ -47,3 +48,4 @@ If you would like to access the API through a request service such as [Postman](
 }
 ``` 
 - Note even though the API will say it's running on port 5000 in the docker container it is being routed through a NGINX load balancer listening on port 8080.
+
