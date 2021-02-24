@@ -10,6 +10,7 @@ In order to successfully run the program. you must have the following installed:
 - Please follow this documentation to build your own android emulator
     - [Docs](https://developer.android.com/studio/run/managing-avds)
    - We recommend using the Android 8.0 OS (oreo)
+   - It is also recommanded that the eumlator be based on an existing smartphone as opposed to a tablet
 
 ## Starting the Application
 The Cheer-Up ChatBot comes in two parts: A Backend API and a frontend android application.
