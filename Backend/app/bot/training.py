@@ -61,6 +61,6 @@ with open("intents.json") as f:
 
 
     model = Bot(training=training, output=output)
-    model.model.fit(training, output, n_epoch=1000, batch_size=8, show_metric=True)
+    model.model.fit(training, output, n_epoch=1500, batch_size=8,show_metric=True)
     model.model.save("model.tflearn")
     
