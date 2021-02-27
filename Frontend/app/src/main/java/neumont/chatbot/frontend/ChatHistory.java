@@ -1,17 +1,22 @@
 package neumont.chatbot.frontend;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Space;
+
+import java.util.Timer;
+import java.util.concurrent.TimeUnit;
 
 public class ChatHistory extends AppCompatActivity {
    private ScrollView chatHistory;
@@ -38,14 +43,21 @@ public class ChatHistory extends AppCompatActivity {
         startActivity(intent);
     }
 
+
     public void backToChatScreen(View view) {
-        Intent intent = new Intent(this, ChatScreen.class);
+        try {
+            TimeUnit.MILLISECONDS.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Intent intent = new Intent(this, ChatScreen.class); //Changing
         String btnText = "New Chat Here!";
 
 
         Button newChat = new Button(this); // Creating a new Button Object
         newChat.setText(btnText); // Setting the text of the Button
         newChat.setTextColor(Color.WHITE); // Setting the color of the text
+        
 
         Space space = new Space(this); //Creating a new Space Object to act as a divider
         space.setMinimumHeight(100); // Setting the height of that divider

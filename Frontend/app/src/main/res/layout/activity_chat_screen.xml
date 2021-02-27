@@ -26,6 +26,7 @@
         android:layout_width="413dp"
         android:layout_height="79dp"
         android:background="#000000"
+        android:fontFamily="@font/abril_fatface"
         android:gravity="center"
         android:text="Chat Screen"
         android:textColor="#FFFFFF"
@@ -58,6 +59,7 @@
         app:layout_constraintVertical_bias="0.26">
 
         <LinearLayout
+            android:id="@+id/chatScreenLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -79,6 +81,7 @@
         android:layout_height="41dp"
         android:background="@drawable/rectangle"
         android:ems="10"
+        android:fontFamily="@font/architects_daughter"
         android:gravity="center"
         android:hint="Speak to the bot"
         android:inputType="textPersonName"
@@ -96,6 +99,7 @@
         android:background="@drawable/custom_circle"
         android:backgroundTint="#161617"
         android:backgroundTintMode="add"
+        android:fontFamily="@font/architects_daughter"
         android:onClick="submitMessage"
         android:text="Submit"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -110,6 +114,7 @@
         android:layout_width="157dp"
         android:layout_height="55dp"
         android:background="@drawable/custom_circle"
+        android:fontFamily="@font/architects_daughter"
         android:onClick="clearMessages"
         android:text="Clear Messages"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -124,6 +129,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/custom_circle"
+        android:fontFamily="@font/architects_daughter"
         android:onClick="backToChatHistoryScreen"
         android:text="Back"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -138,6 +144,7 @@
         android:layout_width="158dp"
         android:layout_height="49dp"
         android:background="@drawable/custom_circle"
+        android:fontFamily="@font/architects_daughter"
         android:onClick="backToHomeScreen"
         android:text="Back to Home"
         app:layout_constraintBottom_toBottomOf="parent"

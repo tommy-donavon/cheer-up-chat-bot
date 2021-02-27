@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -29,6 +30,7 @@ public class ChatScreen extends AppCompatActivity {
     private SpannableStringBuilder ssb = new SpannableStringBuilder();
     private String typing = "typing...";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +49,8 @@ public class ChatScreen extends AppCompatActivity {
 //        aiResponse = findViewById(R.id.tvAIResponse);
 
         messages = findViewById(R.id.svMessages);
+
+
 
 //        testConnection("hi");
     }
