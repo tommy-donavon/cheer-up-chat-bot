@@ -7,9 +7,9 @@ from bot.bot import Bot
 from bot import nltk_utils
 from pathlib import Path
 
-
 app = Flask(__name__)
 
+# Loads in necessary files to reload the bot after training is complete
 data_path = Path(__file__).parent / "./bot/data.json"
 bot_path = Path(__file__).parent / "./bot/model.tflearn"
 json_path = Path(__file__).parent / "./bot/intents.json"
@@ -34,6 +34,14 @@ follow_up_responses = ["I didn't quite get that.", "Sorry what was that?", "uhh 
 
 @app.route('/', methods=['POST'])
 def bot_response():
+
+    """Listens for incoming posts request
+    and processes properly formated messages.
+    Properly formated messages are returned with
+    the bots response and a 200 status code.
+    Improperly formated responses are sent back
+    with a 400 status code.
+    """
     raw_data = request.json
     if 'message' in raw_data:
         user_input = nltk_utils.tokenize( raw_data['message'] )
