@@ -39,8 +39,8 @@
         "salutations"
       ],
       "responses": [
-        "Hello, thanks for visiting",
-        "Good to see you again",
+        "Hi how are you feeling today:)",
+        "Good to see you again! How are you doing?",
         "Hi there, how can I help?",
         "Why hello there, anything I can help yo with?"
       ]
@@ -187,7 +187,7 @@
         "Go to bed dumb dumb",
         "Maybe you should sleep then!",
         "Why don't you go to bed then?",
-        "How about you try sleeping"
+        "How about you try sleeping?"
       ]
     },
     {
@@ -196,20 +196,13 @@
         "I'm happy to see you",
         "I am happy",
         "I'm happy to be here",
-        "I am happy",
         "I'm feeling good",
-        "I'm feeling really good",
         "doing good",
         "I'm feeling cheerful",
-        "cheerful",
-        "content",
         "I feel content",
-        "delighted",
         "I feel delighted",
         "I'm delighted to see you",
         "I feel ecstatic",
-        "I'm feeling ecstatic",
-        "ecstatic",
         "elated",
         "glad",
         "joyful",
@@ -313,7 +306,7 @@
         "Why do you feel that way? You can always talk to me",
         "Good thing I don't have feelings",
         "I'm sorry. A quick walk may make you feel better",
-        "Take a deep breath",
+        "Take a deep breath and try counting to 10.",
         "Have you tried punching something? Preferably not a person"
       ]
     },
@@ -321,7 +314,6 @@
       "tag": "lonely",
       "patterns": [
         "I am lonely",
-
         "I don't have anybody",
         "I am alone",
         "why does no one like me",
@@ -334,69 +326,34 @@
         "Sometimes I feel like that too. Do you want to talk about it?",
         "I may not be real but I'm still your friend",
         "We can always talk if you think that would make you feel better",
-        "Life is hard sometimes, remember that these times will eventully pass"
+        "Life is hard sometimes, remember that these times will eventually pass"
       ]
     },
     {
       "tag":"insulting",
       "patterns":[
         "I hate you",
-        "I hate you so much",
-        "I have a hatred of you",
-        "I feel hatred for you",
-        "Your annoying",
-        "You are annoying",
-        "You annoy me",
-        "Why do you annoy me?",
-        "So annoying",
         "You shut up",
         "Why don't you shut up",
-        "You should shut up",
-        "Shut up",
-        "You should go away",
-        "Get away from me",
         "Go away",
-        "I want you to go away",
-        "I wish for you to go away",
-        "You are dumb",
-        "Your dumb",
-        "You are a dumb dumb",
         "you're dumb",
         "Why don't you leave me alone",
-        "I wish for you to leave me alone",
-        "I wish you would leave me alone",
-        "Leave me",
-        "You should leave me alone",
-        "I want you to leave me alone",
-        "Leave me alone",
         "Just die",
         "Kill yourself",
         "Your mom is fat",
         "You mom is ugly",
         "You should be quiet",
-        "I want you to be quiet",
-        "I wish you would be quiet",
-        "I wish for you to be quiet",
         "Be quiet",
         "I dislike you",
         "I feel a dislike for you",
         "I will beat you up",
-        "I want to beat you up",
-        "I wish I could beat you up",
         "I'll beat you up",
-        "You wish to fight?",
-        "You feel like fighting?",
-        "You want to fight?",
-        "I will fight you",
-        "I'll fight you",
-        "I want to fight you",
         "I wish to fight you",
         "I'll kill you",
         "I will kill you",
         "I want to kill you",
         "you are fat",
         "you're fat",
-        "you are stupid",
         "you're stupid",
         "you are an idiot",
         "you're an idiot",
@@ -409,7 +366,6 @@
         "you're ugly",
         "you are lazy",
         "you're lazy",
-        "your lazy",
         "you are slimy",
         "your slimy",
         "you're slimy",
@@ -430,14 +386,9 @@
         "you're creepy",
         "you're a creepy one",
         "your such a goblin",
-        "you are a goblin",
-        "you're a goblin",
         "your are such a clown",
-        "you're a clown",
-        "you are a clown",
         "you monster!",
         "you are a monster",
-        "you're a monster",
         "your a lazy stupid head",
         "Why are you so stupid?"
       ],
@@ -463,7 +414,7 @@
         "I'll do my best not to annoy you",
         "I'll try not to annoy you",
         "I don't mean to, I'll ask my developers to make me less annoying",
-        "I didn't mean to. I'll do my best to not be"
+        "I didn't mean to annoy you. I'll do my best to not be"
       ]
     },
     {
@@ -487,26 +438,51 @@
     {
       "tag":"suicidal",
       "patterns":[
-        "I feel like commiting suicide",
-        "I want to die"
+        "I feel like committing suicide",
+        "I want to die",
+        "There's no point in living",
+        "I have nothing to live for"
 
       ],
       "responses":[
+        "If you're feeling this way please consider calling this number 800-273-8255"
 
       ]
     },
     {
       "tag":"fear",
       "patterns":[
+        "I'm scared",
+        "I'm frightened",
+        "I'm afraid",
+        "I am terrified",
+        "That's scary",
+        "that scares me"
 
       ],
       "responses":[
-
+        "It's okay to be afraid just remember you are not alone.",
+        "It's okay I'm here to keep you company:)"
+      ]
+    },
+    {
+      "tag":"dismissal",
+      "patterns":[
+        "That won't work",
+        "That doesn't make sense",
+        "I'm not gonna do that",
+        "I won't do that",
+        "Why would you suggest that?"
+      ],
+      "responses":[
+        "Sorry maybe I didn't read the situation correctly",
+        "If you explain the situation to me again I can try offering another suggestion"
       ]
     },
     {
       "tag":"surprise",
       "patterns":[
+        
 
       ],
       "responses":[

@@ -2,7 +2,7 @@ import json
 import numpy
 import random
 
-from flask import Flask, request, jsonify, make_response
+from flask import Flask, request, jsonify
 from bot.bot import Bot
 from bot import nltk_utils
 from pathlib import Path
