@@ -12,9 +12,9 @@ public class SignUpScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         try
         {
-            this.getSupportActionBar().hide();
+            this.getSupportActionBar().hide(); //Hides the action bar to optimize more space
         }
-        catch (NullPointerException e){
+        catch (NullPointerException e){ //Catching the possibility of a Null value
             e.printStackTrace();
         }
         super.onCreate(savedInstanceState);
@@ -22,7 +22,7 @@ public class SignUpScreen extends AppCompatActivity {
     }
 
     public void createUserOnClick(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        Intent intent = new Intent(this, MainActivity.class); //Creating Intent object to switch to the Main Login Screen
+        startActivity(intent); //Executing the event
     }
 }

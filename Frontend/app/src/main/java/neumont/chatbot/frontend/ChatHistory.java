@@ -19,7 +19,6 @@ import java.util.Timer;
 import java.util.concurrent.TimeUnit;
 
 public class ChatHistory extends AppCompatActivity {
-   private ScrollView chatHistory;
    private LinearLayout chatLayout;
 
     @Override
@@ -27,31 +26,31 @@ public class ChatHistory extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         try
         {
-            this.getSupportActionBar().hide();
+            this.getSupportActionBar().hide(); //Hides the action bar to optimize more space
         }
-        catch (NullPointerException e){
+        catch (NullPointerException e){ //Catching the possibility of a Null value
             e.printStackTrace();
         }
         setContentView(R.layout.activity_chat_history);
-        chatHistory = findViewById(R.id.svChatHistory);
-        chatLayout = findViewById(R.id.chatLinearLayout);
+
+        chatLayout = findViewById(R.id.chatLinearLayout); //Finding the LinearLayout object by it's Id for reference later in code
 
     }
 
     public void backToHomeScreen(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        Intent intent = new Intent(this, MainActivity.class); //Creating Intent object to switch to the Main Login Screen
+        startActivity(intent); //Executing the event
     }
 
 
     public void backToChatScreen(View view) {
         try {
-            TimeUnit.MILLISECONDS.sleep(1000);
-        } catch (InterruptedException e) {
+            TimeUnit.MILLISECONDS.sleep(1000); //Adding sleeper to avoid spamming the create chat button
+        } catch (InterruptedException e) { //Catching the possibility of the timer being interrupted
             e.printStackTrace();
         }
-        Intent intent = new Intent(this, ChatScreen.class); //Changing
-        String btnText = "New Chat Here!";
+        Intent intent = new Intent(this, ChatScreen.class); //Creating Intent object to switch to the Chat Screen
+        String btnText = "New Chat Here!"; //Text to be placed in button
 
 
         Button newChat = new Button(this); // Creating a new Button Object
@@ -65,12 +64,10 @@ public class ChatHistory extends AppCompatActivity {
         newChat.setBackgroundResource(R.drawable.custom_circle); // Setting up the style for the buttons
         newChat.setPadding(15,15,15,15);
 
-        newChat.setOnClickListener(new View.OnClickListener() { // Adding an Onclick for each button created to go to the Chat Screen
-            @Override
-            public void onClick(View view) {
+        // Adding an Onclick for each button created to go to the Chat Screen
+        newChat.setOnClickListener(view1 -> {
 
-                startActivity(intent);
-            }
+            startActivity(intent); //Executing the event
         });
 
         chatLayout.addView(space); //Adding the Space object into the ScrollView

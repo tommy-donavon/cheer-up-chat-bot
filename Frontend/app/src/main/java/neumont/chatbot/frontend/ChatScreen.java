@@ -27,7 +27,6 @@ public class ChatScreen extends AppCompatActivity {
     private EditText message;
     private TextView response, aiResponse;
     private ScrollView messages;
-    private SpannableStringBuilder ssb = new SpannableStringBuilder();
     private String typing = "typing...";
 
 
@@ -36,18 +35,16 @@ public class ChatScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         try
         {
-            this.getSupportActionBar().hide();
+            this.getSupportActionBar().hide(); //Hides the action bar to optimize more space
         }
-        catch (NullPointerException e){
+        catch (NullPointerException e){ //Catching the possibility of a Null value
             e.printStackTrace();
         }
         setContentView(R.layout.activity_chat_screen);
 
+        //Finding the View Elements by it's Id for reference later in code
         message = findViewById(R.id.etMessage);
-
         response = findViewById(R.id.tvResponse);
-//        aiResponse = findViewById(R.id.tvAIResponse);
-
         messages = findViewById(R.id.svMessages);
 
 
@@ -57,50 +54,50 @@ public class ChatScreen extends AppCompatActivity {
 
     public void testConnection(String userMessage) {
 
-        RequestQueue rq = Volley.newRequestQueue(this);
-        String URL = "http://10.0.2.2:8080/";
-        JSONObject jb = new JSONObject();
+        RequestQueue rq = Volley.newRequestQueue(this); //Creating a RequestQueue Object
+        String URL = "http://10.0.2.2:8080/"; //Storing the URL needed to hit the endpoint
+        JSONObject jb = new JSONObject(); //Creating a JSONObject object to store messages
         try {
-            jb.put("message", userMessage);
-        } catch (JSONException e) {
+            jb.put("message", userMessage); //Populating JSONObject with a key and the user's message
+        } catch (JSONException e) { //Catching the possibility of a JSONException
             e.printStackTrace();
         }
-        JsonObjectRequest jr = new JsonObjectRequest(Request.Method.POST, URL, jb, response -> {
+        JsonObjectRequest jr = new JsonObjectRequest(Request.Method.POST, URL, jb, response -> { //Creating a JsonObjectRequest object to connect to the AI
             try {
-                System.out.println(response);
-                String ok = (String) response.get("bot");
-                TimeUnit.SECONDS.sleep(2);
-                this.response.append("Bot: " + ok + "\n\n");
+                System.out.println(response); //Printing the message in console for testing
+                String ok = (String) response.get("bot"); //Getting the message
+                TimeUnit.SECONDS.sleep(2); //Timer to simulate the Bot thinking of the best response
+                this.response.append("Bot: " + ok + "\n\n"); //Appending to the TextView to show the conversations
 
-            } catch (JSONException | InterruptedException e) {
+            } catch (JSONException | InterruptedException e) { //Catching the possibility of a JSON or Interrupted Exception
                 e.printStackTrace();
             }
 
-        }, error -> Log.e("error: ", error.toString()));
-        rq.add(jr);
+        }, error -> Log.e("error: ", error.toString())); //Printing the error in case there is one
+        rq.add(jr); //Adding the JSON request to the RequestQueue
 
     }
 
     public void submitMessage(View view) {
-        String messageText = message.getText().toString();
-        testConnection(messageText);
+        String messageText = message.getText().toString(); //Getting the user's input from an EditText
+        testConnection(messageText); //Calling the testConnection method to connect the bot with the user's text
 
-        response.append("User: " + messageText + "\n" + typing + "\n");
+        response.append("User: " + messageText + "\n" + typing + "\n"); //Appending to the TextView to show the conversations
 
-        message.setText("");
+        message.setText(""); //Resetting the the EditText to empty
     }
 
     public void clearMessages(View view) {
-        response.setText("");
+        response.setText(""); //Resetting the TextView that shows the conversations to empty
     }
 
     public void backToChatHistoryScreen(View view) {
-        Intent intent = new Intent(this, ChatHistory.class);
-        startActivity(intent);
+        Intent intent = new Intent(this, ChatHistory.class); //Creating Intent object to switch to the Chat History Screen
+        startActivity(intent); //Executing the event
     }
 
     public void backToHomeScreen(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        Intent intent = new Intent(this, MainActivity.class); //Creating Intent object to switch to the Main Login Screen
+        startActivity(intent); //Executing the event
     }
 }
