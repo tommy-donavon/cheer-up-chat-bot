@@ -2,28 +2,17 @@ import json
 import numpy
 import random
 
-import base64
 
-from mongoengine.errors import DoesNotExist, ValidationError
-from flask_httpauth import HTTPBasicAuth
-from werkzeug.security import generate_password_hash, check_password_hash
+from mongoengine.errors import NotUniqueError, ValidationError
+from werkzeug.security import generate_password_hash
 from flask import Flask, request, jsonify
 from bot.bot import Bot
 from bot import nltk_utils
 from pathlib import Path
-from mongoengine import connect, Document, StringField
+from authentication import auth, User
+
 
 app = Flask(__name__)
-auth = HTTPBasicAuth()
-
-DB_URI = 'mongodb+srv://User:TWKUDY8qLS2Db0hE@cluster0.a8rpi.mongodb.net/se?retryWrites=true&w=majority'
-
-db = connect(host=DB_URI)
-
-class User(Document):
-    name = StringField(required=True, unique=True)
-    password = StringField(required=True)
-
 
 
 # Loads in necessary files to reload the bot after training is complete
@@ -50,6 +39,7 @@ follow_up_responses = ["I didn't quite get that.", "Sorry what was that?", "uhh 
 
 
 @app.route('/', methods=['POST'])
+@auth.login_required
 def bot_response():
 
     """Listens for incoming posts request
@@ -81,29 +71,23 @@ def bot_response():
     else:
         return jsonify({"status":"Please include a message"}), 400
 
+
 @app.route('/create-user', methods=['POST'])
-@auth.login_required
 def create_user():
     user_data = request.json
     if 'username' and 'password' in user_data:
-        encode_password = base64.b64encode(bytes(user_data['password'], 'utf-8'))
+        encode_password = generate_password_hash(user_data['password'])
         user_name = user_data['username']
         try:
             user = User(name=user_name, password=encode_password)
             user.validate()
             user.save()
             return ('', 204)
-        except ValidationError:
+        except ValidationError and NotUniqueError:
             return jsonify({"status", "Username already taken"}), 400
-        pass
     else: 
         return jsonify({"status", "Invalid request"}), 400
 
-@auth.verify_password
-def verify_password(username, password):
-    user = User.objects().get(name=username)
-    if user is not None and check_password_hash(user['password'], password):
-        return user
 
 
 
