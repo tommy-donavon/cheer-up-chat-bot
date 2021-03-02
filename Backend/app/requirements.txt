@@ -3,4 +3,6 @@ nltk==3.5
 tensorflow==2.4.1
 tflearn==0.5.0
 numpy
-
+mongoengine==0.22.1
+dnspython
+Flask-HttpAuth

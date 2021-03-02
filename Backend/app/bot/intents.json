@@ -114,10 +114,10 @@
         "Catch you later"
       ],
       "responses": [
-        "See you later, thanks for visiting",
-        "Have a nice day",
-        "Bye! Come back again soon.",
-        "See ya!"
+        "See you later %s, thanks for visiting",
+        "Bye %s, Have a nice day",
+        "Bye %s! Come back again soon.",
+        "See ya %s!"
       ]
     },
     {
@@ -128,7 +128,7 @@
         "good morrow"
       ],
       "responses":[
-        "Good morning!! How are you?"
+        "Good morning %s!! How are you?"
       ]
     },
     {
@@ -140,7 +140,7 @@
         
       ],
       "responses":[
-        "Good night, talk to you soon!"
+        "Good night %s, talk to you soon!"
       ]
     },
     {
@@ -293,7 +293,7 @@
         "Excellent! That's what I like to hear!",
         "Thats great whats making you so happy?",
         "Being happy is the best!",
-        "You being happy makes me happy even though I dont have any feelings"
+        "You being happy makes me happy even though I don't have any feelings"
       ]
     },
     {
@@ -379,7 +379,7 @@
         "nothing",
         "I have nothing",
         "I have no-one",
-        "I dont have any friends",
+        "I don't have any friends",
         "I have no family"
       ],
       "responses": [
@@ -489,7 +489,9 @@
       ],
       "responses":[
         "You won't always feel like this.",
-        "It's okay to feel sad sometimes."
+        "I'm always here if you need support",
+        "It's okay to feel sad sometimes.",
+        "Everyone feels sad from time to time"
       ]
     },
     {
@@ -555,7 +557,7 @@
 
       ],
       "responses":[
-        "ajhhhhhhhhhh"
+        "ahhhhhhhhhhhhhh"
       ]
     },
     {
