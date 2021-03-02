@@ -28,6 +28,7 @@ public class ChatScreen extends AppCompatActivity {
     private TextView response, aiResponse;
     private ScrollView messages;
     private String typing = "typing...";
+    private String testName = "Bob";
 
 
     @Override
@@ -65,7 +66,11 @@ public class ChatScreen extends AppCompatActivity {
         JsonObjectRequest jr = new JsonObjectRequest(Request.Method.POST, URL, jb, response -> { //Creating a JsonObjectRequest object to connect to the AI
             try {
                 System.out.println(response); //Printing the message in console for testing
-                String ok = (String) response.get("bot"); //Getting the message
+                String ok = (String) response.get("bot");//Getting the message
+                if(ok.contains("%s"))
+                {
+                    ok = String.format(ok, testName);
+                }
                 TimeUnit.SECONDS.sleep(2); //Timer to simulate the Bot thinking of the best response
                 this.response.append("Bot: " + ok + "\n\n"); //Appending to the TextView to show the conversations
 

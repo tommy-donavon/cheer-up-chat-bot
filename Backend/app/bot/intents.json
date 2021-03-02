@@ -39,10 +39,10 @@
         "salutations"
       ],
       "responses": [
-        "Hi how are you feeling today:)",
-        "Good to see you again! How are you doing?",
-        "Hi there, how can I help?",
-        "Why hello there, anything I can help yo with?"
+        "Hi %s how are you feeling today:)",
+        "Good to see you again %s! How are you doing?",
+        "Hi there %s, how can I help?",
+        "Why hello there %s, anything I can help yo with?"
       ]
     },
     {
@@ -356,13 +356,13 @@
         "you're fat",
         "you're stupid",
         "you are an idiot",
-        "you're an idiot",
+      
         "your trash",
         "you're trash",
         "you suck",
         "you are trash",
         "your ugly",
-        "you are ugly",
+        
         "you're ugly",
         "you are lazy",
         "you're lazy",
@@ -492,20 +492,25 @@
     {
       "tag":"humor",
       "patterns":[
+        "Tell me a joke",
+        "Tell me something funny",
+        "Can you tell any jokes?"
 
       ],
       "responses":[
-
+        "ajhhhhhhhhhh"
       ]
     },
     {
       "tag":"apology",
       "patterns":[
         "I'm sorry",
-        "sorry I didn't mean that"
+        "sorry I didn't mean that",
+        "I apologize",
+        "i am sorry"
       ],
       "responses":[
-        "It's okay!"
+        "It's okay! I don't even have feelings!!"
       ]
     }
   ]
