@@ -126,7 +126,9 @@
         "grace",
         "grateful",
         "praise",
-        "thankful"
+        "thankful",
+        "I appreciate it",
+        "appreciation"
       ],
       "responses": [
         "Happy to help!",
@@ -241,7 +243,10 @@
       "responses": [
         "Great! Glad to hear that!",
         "If you're happy, then I'm happy:)",
-        "Excellent! That's what I like to hear!"
+        "Excellent! That's what I like to hear!",
+        "Thats great whats making you so happy?",
+        "Being happy is the best!",
+        "You being happy makes me happy even though I dont have any feelings"
       ]
     },
     {
@@ -276,7 +281,8 @@
       "responses": [
         "I'm glad things are going your way right now",
         "Good for you!",
-        "That's great. I'm happy for you!:)"
+        "That's great. I'm happy for you!:)",
+        "Awesome. Tell me whats making you so exited"
       ]
     },
     {
@@ -298,7 +304,9 @@
         "outrage",
         "peeved",
         "resent",
-        "rage"
+        "rage",
+        "Im pissed off",
+        "Im fuming"
 
       ],
       "responses": [
@@ -307,7 +315,8 @@
         "Good thing I don't have feelings",
         "I'm sorry. A quick walk may make you feel better",
         "Take a deep breath and try counting to 10.",
-        "Have you tried punching something? Preferably not a person"
+        "Have you tried punching something? Preferably not a person",
+        "Try getting some exercise to get your mind off things"
       ]
     },
     {
@@ -319,14 +328,20 @@
         "why does no one like me",
         "no one loves me",
         "I feel like I'm alone in the world",
-        "I have no friends"
+        "I have no friends",
+        "nothing",
+        "I have nothing",
+        "I have no-one",
+        "I dont have any friends",
+        "I have no family"
       ],
       "responses": [
         "I'm sorry to hear that. I'm always here to talk to you",
         "Sometimes I feel like that too. Do you want to talk about it?",
         "I may not be real but I'm still your friend",
         "We can always talk if you think that would make you feel better",
-        "Life is hard sometimes, remember that these times will eventually pass"
+        "Life is hard sometimes, remember that these times will eventually pass",
+        "You're not alone, I am here for you"
       ]
     },
     {
