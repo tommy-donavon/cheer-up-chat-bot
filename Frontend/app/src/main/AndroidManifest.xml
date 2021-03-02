@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="neumont.chatbot.frontend">
-
-<!--    <uses-permission android:name="android.permission.WAKE_LOCK" />-->
-    <uses-permission android:name="android.permission.INTERNET"/>
-
+    <!-- <uses-permission android:name="android.permission.WAKE_LOCK" /> -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-feature android:name="android.hardware.type.watch" />
 
@@ -15,6 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Frontend">
+        <activity android:name=".SignUpScreen"></activity>
         <activity android:name=".ChatHistory" />
         <activity android:name=".ChatScreen" /> <!-- <uses-library -->
         <!-- android:name="com.google.android.wearable" -->
@@ -26,6 +25,9 @@
         <meta-data
             android:name="com.google.android.wearable.standalone"
             android:value="true" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".MainActivity">
             <intent-filter>

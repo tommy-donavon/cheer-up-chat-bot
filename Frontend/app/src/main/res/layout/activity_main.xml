@@ -8,46 +8,84 @@
     android:foregroundTint="#FFFFFF"
     tools:context=".MainActivity">
 
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="413dp"
+        android:layout_height="79dp"
+        android:background="#000000"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:textDirection="firstStrongRtl"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="413dp"
+        android:layout_height="79dp"
+        android:background="#000000"
+        android:fontFamily="@font/abril_fatface"
+        android:gravity="center"
+        android:text="Welcome to our Chat-Bot!"
+        android:textColor="#FFFFFF"
+        android:textDirection="firstStrongRtl"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
     <Button
         android:id="@+id/button3"
         android:layout_width="139dp"
         android:layout_height="73dp"
         android:background="@drawable/circle"
+        android:fontFamily="@font/architects_daughter"
         android:onClick="continueAsGuestOnClick"
-        android:text="Continue As Guest"
+        android:text="Continue As Guest!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.904" />
+        app:layout_constraintVertical_bias="0.781" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="139dp"
         android:layout_height="73dp"
         android:background="@drawable/circle"
+        android:fontFamily="@font/architects_daughter"
         android:onClick="signInOnClick"
-        android:text="Sign-In"
+        android:text="Sign-In!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.889"
+        app:layout_constraintHorizontal_bias="0.941"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.765" />
+        app:layout_constraintVertical_bias="0.645" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="139dp"
         android:layout_height="73dp"
         android:background="@drawable/circle"
+        android:fontFamily="@font/architects_daughter"
         android:onClick="signUpOnClick"
-        android:text="Sign-Up"
+        android:text="Sign-Up!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintHorizontal_bias="0.058"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.765" />
+        app:layout_constraintVertical_bias="0.645" />
 
     <EditText
         android:id="@+id/etUsername"
@@ -55,6 +93,7 @@
         android:layout_height="50dp"
         android:background="@drawable/rectangle"
         android:ems="10"
+        android:fontFamily="@font/architects_daughter"
         android:hint="Username"
         android:inputType="textPersonName"
         android:textAlignment="center"
@@ -64,7 +103,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.308" />
+        app:layout_constraintVertical_bias="0.24" />
 
     <EditText
         android:id="@+id/etPassword"
@@ -72,6 +111,7 @@
         android:layout_height="50dp"
         android:background="@drawable/rectangle"
         android:ems="10"
+        android:fontFamily="@font/architects_daughter"
         android:hint="Password"
         android:inputType="textPersonName"
         android:password="true"
@@ -83,30 +123,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.427" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="220dp"
-        android:layout_height="161dp"
-        android:layout_marginTop="16dp"
-        android:background="#000000"
-        android:foreground="@drawable/logo1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo1" />
-
-    <TextView
-        android:id="@+id/tvTestOutput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.609" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

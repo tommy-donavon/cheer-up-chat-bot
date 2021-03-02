@@ -1,7 +1,5 @@
-FROM ubuntu:18.04
+FROM python:3.8-buster
 
-RUN apt-get update
-RUN apt-get install -y build-essential python3.6-dev python3-pip python3.6-venv
 RUN pip3 install --upgrade pip
 
 RUN set -ex && mkdir /app

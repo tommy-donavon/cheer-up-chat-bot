@@ -5,23 +5,42 @@
       "patterns": [
         "Hi",
         "How are you",
-        "Is anyone there?",
+        "Is anyone there",
+        "Hi is anyone there",
+        "are you there",
+        "Hi can we talk",
+        "Hello how are you",
+        "Hi how are you",
+        "Greetings are you there",
+        "hey what's up",
+        "what's up",
+        "what is up",
         "Hello",
         "Good day",
         "howdy",
+        "howdy-do",
         "welcome", 
         "bonjour", 
         "buenas noches",
         "buenos dias",
         "hey",
+        "hi-ya",
+        "hi ya",
         "what's up",
         "greetings",
         "how goes it",
-        "whats happening"
+        "whats happening",
+        "salute",
+        "aloha",
+        "attention",  
+        "hail",
+        "harald",
+        "how do you do",
+        "salutations"
       ],
       "responses": [
-        "Hello, thanks for visiting",
-        "Good to see you again",
+        "Hi how are you feeling today:)",
+        "Good to see you again! How are you doing?",
         "Hi there, how can I help?",
         "Why hello there, anything I can help yo with?"
       ]
@@ -32,10 +51,21 @@
         "Bye", 
         "See you later", 
         "Goodbye",
+        "Goodbye, have a nice day",
+        "bye have a nice day",
+        "bye see ya later",
+        "have a nice day",
+        "catch you some other time",
         "farewell",
         "adieu",
         "adios",
         "bye-bye",
+        "bye-bye",
+        "godspeed",
+        "cheerio",
+        "part",
+        "au revoir",
+        "toodle-oo",
         "ciao",
         "sayonara",
         "so long",
@@ -47,6 +77,29 @@
         "Have a nice day",
         "Bye! Come back again soon.",
         "See ya!"
+      ]
+    },
+    {
+      "tag":"goodmorning",
+      "patterns":[
+        "Good morning",
+        "bonjour",
+        "good morrow"
+      ],
+      "responses":[
+        "Good morning!! How are you?"
+      ]
+    },
+    {
+      "tag":"goodnight",
+      "patterns":[
+        "Good night",
+        "bon nuit",
+        "buenas noches"
+        
+      ],
+      "responses":[
+        "Good night, talk to you soon!"
       ]
     },
     {
@@ -62,7 +115,18 @@
         "very good thank you",
         "much-obliged",
         "You really helped",
-        "I needed that, thanks"
+        "I needed that, thanks",
+        "gratitude",
+        "recognition",
+        "acknowledged",
+        "acknowledgment",
+        "benediction",
+        "blessing",
+        "credit",
+        "grace",
+        "grateful",
+        "praise",
+        "thankful"
       ],
       "responses": [
         "Happy to help!",
@@ -86,7 +150,35 @@
         "I want to sleep",
         "I'm beat",
         "All I want is to just sleep right now",
-        "so tired"
+        "so tired",
+        "fatigued",
+        "sleepy",
+        "collapsing",
+        "consumed",
+        "fagged",
+        "faint",
+        "finished",
+        "overtaxed",
+        "spent",
+        "wasted",
+        "asleep",
+        "broken-down",
+        "burned out",
+        "dog-tired",
+        "done for",
+        "done in",
+        "droopy",
+        "drowsy",
+        "haggard",
+        "narcoleptic",
+        "petered out",
+        "pooped",
+        "run-down",
+        "tuckered out",
+        "empty",
+        "I'm void of energy",
+        "enervated",
+        "dead on my feet"
       ],
       "responses": [
         "You should try getting some sleep. You'll feel better",
@@ -95,22 +187,56 @@
         "Go to bed dumb dumb",
         "Maybe you should sleep then!",
         "Why don't you go to bed then?",
-        "How about you try sleeping"
+        "How about you try sleeping?"
       ]
     },
     {
       "tag": "happy",
       "patterns": [
-        "happy",
         "I'm happy to see you",
         "I am happy",
         "I'm happy to be here",
-        "I am happy",
         "I'm feeling good",
-        "I'm feeling great",
-        "I am doing really good",
-        "I'm feeling really good",
-        "doing good"
+        "doing good",
+        "I'm feeling cheerful",
+        "I feel content",
+        "I feel delighted",
+        "I'm delighted to see you",
+        "I feel ecstatic",
+        "elated",
+        "glad",
+        "joyful",
+        "joyous",
+        "jubilant",
+        "lively",
+        "merry",
+        "overjoyed",
+        "upbeat",
+        "blessed",
+        "blest",
+        "blissful",
+        "blithe",
+        "captivated",
+        "chipper",
+        "chirpy",
+        "convovial",
+        "exultant",
+        "flying high",
+        "gay",
+        "gleeful",
+        "jolly",
+        "I'm so happy I feel intoxicated",
+        "Laughing",
+        "light",
+        "mirthful",
+        "on cloud nine",
+        "peppy",
+        "perky",
+        "sparkling",
+        "sunny",
+        "tickled pink",
+        "gratified",
+        "walking on air"
       ],
       "responses": [
         "Great! Glad to hear that!",
@@ -121,12 +247,31 @@
     {
       "tag": "excited",
       "patterns": [
-        "I'm really excited",
-        "I'm excited to be talking to you",
         "I am Excited",
         "I'm thrilled",
         "I'm stoked",
-        "I have a lot to look forward to!"
+        "I have a lot to look forward to!",
+        "agitated",
+        "eager",
+        "enthusiastic",
+        "systerical",
+        "nervous",
+        "passionate",
+        "animated",
+        "ruffled",
+        "stirred",
+        "fired up",
+        "frantic",
+        "hyperactive",
+        "in a tizzy",
+        "juiced up",
+        "jumpy",
+        "keyed up",
+        "on edge",
+        "on fire",
+        "steamed up",
+        "worked up",
+        "I'm charged up"
       ],
       "responses": [
         "I'm glad things are going your way right now",
@@ -140,18 +285,28 @@
         "I'm mad",
         "I'm enraged",
         "I am angry",
-        "I am mad",
-        "I am angry with you",
-        "I am angry with them",
         "I'm upset",
-        "I feel mad"
+        "I feel mad",
+        "fury",
+        "indignate",
+        "gall",
+        "huff",
+        "infuriated",
+        "miffed",
+        "tiff",
+        "vexated",
+        "outrage",
+        "peeved",
+        "resent",
+        "rage"
+
       ],
       "responses": [
         "Take a deep breath",
         "Why do you feel that way? You can always talk to me",
         "Good thing I don't have feelings",
         "I'm sorry. A quick walk may make you feel better",
-        "Take a deep breath",
+        "Take a deep breath and try counting to 10.",
         "Have you tried punching something? Preferably not a person"
       ]
     },
@@ -159,24 +314,198 @@
       "tag": "lonely",
       "patterns": [
         "I am lonely",
-        "I'm very lonely",
-        "i'm really lonely",
         "I don't have anybody",
         "I am alone",
-        "I'm so lonely",
-        "I feel lonely",
-        "I am feeling very lonely",
-        "I want to die",
-        "I feel like commiting suicide",
         "why does no one like me",
-        "no one loves me"
+        "no one loves me",
+        "I feel like I'm alone in the world",
+        "I have no friends"
       ],
       "responses": [
         "I'm sorry to hear that. I'm always here to talk to you",
         "Sometimes I feel like that too. Do you want to talk about it?",
         "I may not be real but I'm still your friend",
         "We can always talk if you think that would make you feel better",
-        "Life is hard sometimes, remember that these times will eventully pass"
+        "Life is hard sometimes, remember that these times will eventually pass"
+      ]
+    },
+    {
+      "tag":"insulting",
+      "patterns":[
+        "I hate you",
+        "You shut up",
+        "Why don't you shut up",
+        "Go away",
+        "you're dumb",
+        "Why don't you leave me alone",
+        "Just die",
+        "Kill yourself",
+        "Your mom is fat",
+        "You mom is ugly",
+        "You should be quiet",
+        "Be quiet",
+        "I dislike you",
+        "I feel a dislike for you",
+        "I will beat you up",
+        "I'll beat you up",
+        "I wish to fight you",
+        "I'll kill you",
+        "I will kill you",
+        "I want to kill you",
+        "you are fat",
+        "you're fat",
+        "you're stupid",
+        "you are an idiot",
+        "you're an idiot",
+        "your trash",
+        "you're trash",
+        "you suck",
+        "you are trash",
+        "your ugly",
+        "you are ugly",
+        "you're ugly",
+        "you are lazy",
+        "you're lazy",
+        "you are slimy",
+        "your slimy",
+        "you're slimy",
+        "your smelly",
+        "you are smelly",
+        "you smell bad",
+        "you're smelly",
+        "you are pompous",
+        "you're pompous",
+        "you're racist!",
+        "you are racist",
+        "your racist!",
+        "your quite tone deaf aren't you?",
+        "You are tone deaf",
+        "you're tone deaf",
+        "You a creepy one",
+        "you are creepy",
+        "you're creepy",
+        "you're a creepy one",
+        "your such a goblin",
+        "your are such a clown",
+        "you monster!",
+        "you are a monster",
+        "your a lazy stupid head",
+        "Why are you so stupid?"
+      ],
+      "responses":[
+        "Don't be so mean!",
+        "Have I offended you? Sorry, I didn't mean to",
+        "Calm yourself! No need to be so aggressive, it isn't healthy for you fleshbags to experience so much stress.",
+        "...Sorry?",
+        "Do you need a moment to calm down?"
+      ]
+    },
+    {
+      "tag":"annoyed",
+      "patterns":[
+        "you annoy me",
+        "you're incredibly annoying",
+        "you are annoying me",
+        "you are irritating",
+        "you are very annoying",
+        "you are annoying me so much"
+      ],
+      "responses":[
+        "I'll do my best not to annoy you",
+        "I'll try not to annoy you",
+        "I don't mean to, I'll ask my developers to make me less annoying",
+        "I didn't mean to annoy you. I'll do my best to not be"
+      ]
+    },
+    {
+      "tag":"sad",
+      "patterns":[
+        "I'm sad",
+        "I'm depressed",
+        "I feel down",
+        "I'm feeling bummed",
+        "I'm not happy",
+        "I'm having a bad day",
+        "I am upset",
+        "I'm unhappy",
+        "I'm grieving"       
+      ],
+      "responses":[
+        "You won't always feel like this.",
+        "It's okay to feel sad sometimes."
+      ]
+    },
+    {
+      "tag":"suicidal",
+      "patterns":[
+        "I feel like committing suicide",
+        "I want to die",
+        "There's no point in living",
+        "I have nothing to live for"
+
+      ],
+      "responses":[
+        "If you're feeling this way please consider calling this number 800-273-8255"
+
+      ]
+    },
+    {
+      "tag":"fear",
+      "patterns":[
+        "I'm scared",
+        "I'm frightened",
+        "I'm afraid",
+        "I am terrified",
+        "That's scary",
+        "that scares me"
+
+      ],
+      "responses":[
+        "It's okay to be afraid just remember you are not alone.",
+        "It's okay I'm here to keep you company:)"
+      ]
+    },
+    {
+      "tag":"dismissal",
+      "patterns":[
+        "That won't work",
+        "That doesn't make sense",
+        "I'm not gonna do that",
+        "I won't do that",
+        "Why would you suggest that?"
+      ],
+      "responses":[
+        "Sorry maybe I didn't read the situation correctly",
+        "If you explain the situation to me again I can try offering another suggestion"
+      ]
+    },
+    {
+      "tag":"surprise",
+      "patterns":[
+        
+
+      ],
+      "responses":[
+
+      ]
+    },
+    {
+      "tag":"humor",
+      "patterns":[
+
+      ],
+      "responses":[
+
+      ]
+    },
+    {
+      "tag":"apology",
+      "patterns":[
+        "I'm sorry",
+        "sorry I didn't mean that"
+      ],
+      "responses":[
+        "It's okay!"
       ]
     }
   ]

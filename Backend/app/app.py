@@ -1,14 +1,15 @@
-from flask import Flask, request, jsonify, make_response
-from bot.bot import Bot
-from bot import nltk_utils
-from pathlib import Path
 import json
 import numpy
 import random
 
+from flask import Flask, request, jsonify
+from bot.bot import Bot
+from bot import nltk_utils
+from pathlib import Path
 
 app = Flask(__name__)
 
+# Loads in necessary files to reload the bot after training is complete
 data_path = Path(__file__).parent / "./bot/data.json"
 bot_path = Path(__file__).parent / "./bot/model.tflearn"
 json_path = Path(__file__).parent / "./bot/intents.json"
@@ -27,22 +28,36 @@ with data_path.open() as f:
 model = Bot(training=training, output = output)
 model.model.load(bot_path)
 
+follow_up_responses = ["I didn't quite get that.", "Sorry what was that?", "uhh what was that.", "Can you repeat that?"]
+
 
 
 @app.route('/', methods=['POST'])
 def bot_response():
+
+    """Listens for incoming posts request
+    and processes properly formated messages.
+    Properly formated messages are returned with
+    the bots response and a 200 status code.
+    Improperly formated responses are sent back
+    with a 400 status code.
+    """
     raw_data = request.json
     if 'message' in raw_data:
         user_input = nltk_utils.tokenize( raw_data['message'] )
         user_bag = nltk_utils.word_bag(user_input, all_words)
         results = model.model.predict([user_bag])
+        props = numpy.max(results)
         matching_index = numpy.argmax(results)
         tag = tags[matching_index]
         responses = []
-        for t in intent_data['intents']:
-            if t['tag'] == tag:
-                responses = t['responses']
-        return jsonify({"bot": random.choice(responses)}), 200
+        if props >= .75:
+            for t in intent_data['intents']:
+                if t['tag'] == tag:
+                    responses = t['responses']
+            return jsonify({"bot": random.choice(responses), "chance": f"{props}"}), 200
+        else: 
+            return jsonify({"bot":random.choice(follow_up_responses), "chance": f"{props}"}), 200
         
 
     else:
