@@ -84,9 +84,14 @@ def create_user():
             user.save()
             return ('', 204)
         except ValidationError and NotUniqueError:
-            return jsonify({"status", "Username already taken"}), 400
+            return jsonify({"status": "Username already taken"}), 400
     else: 
-        return jsonify({"status", "Invalid request"}), 400
+        return jsonify({"status": "Invalid request"}), 400
+
+@app.route('/login', methods=['POST'])
+@auth.login_required
+def check_for_user():
+    return jsonify({"username": auth.current_user().name}), 200
 
 
 

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
+import android.util.Base64;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
@@ -21,6 +23,9 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class ChatScreen extends AppCompatActivity {
@@ -28,7 +33,8 @@ public class ChatScreen extends AppCompatActivity {
     private TextView response, aiResponse;
     private ScrollView messages;
     private String typing = "typing...";
-    private String testName = "Bob";
+    private String testName = getIntent().getStringExtra("name");
+    private String password = getIntent().getStringExtra("password");
 
 
     @Override
@@ -78,7 +84,16 @@ public class ChatScreen extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-        }, error -> Log.e("error: ", error.toString())); //Printing the error in case there is one
+        }, error -> Log.e("error: ", error.toString())){
+            @Override
+            public Map<String, String> getHeaders() {
+                String creds = testName + ":" + password;
+                String encode = Base64.encodeToString(creds.getBytes(StandardCharsets.UTF_8), Base64.DEFAULT);
+                Map<String, String> headers = new HashMap<>();
+                headers.put("Authorization", "Basic " + encode);
+                return headers;
+            }
+        }; //Printing the error in case there is one
         rq.add(jr); //Adding the JSON request to the RequestQueue
 
     }
