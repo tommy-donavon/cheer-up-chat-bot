@@ -20,6 +20,8 @@ import java.util.concurrent.TimeUnit;
 
 public class ChatHistory extends AppCompatActivity {
    private LinearLayout chatLayout;
+    private String testName;
+    private String password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +36,8 @@ public class ChatHistory extends AppCompatActivity {
         setContentView(R.layout.activity_chat_history);
 
         chatLayout = findViewById(R.id.chatLinearLayout); //Finding the LinearLayout object by it's Id for reference later in code
-
+        testName = getIntent().getStringExtra("name");
+        password = getIntent().getStringExtra("password");
     }
 
     public void backToHomeScreen(View view) {
@@ -49,7 +52,10 @@ public class ChatHistory extends AppCompatActivity {
         } catch (InterruptedException e) { //Catching the possibility of the timer being interrupted
             e.printStackTrace();
         }
-        Intent intent = new Intent(this, ChatScreen.class); //Creating Intent object to switch to the Chat Screen
+        Intent intent = new Intent(this, ChatScreen.class);
+
+        intent.putExtra("name", testName);
+        intent.putExtra("password", password);
         String btnText = "New Chat Here!"; //Text to be placed in button
 
 

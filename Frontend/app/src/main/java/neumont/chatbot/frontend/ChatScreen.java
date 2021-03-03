@@ -33,8 +33,8 @@ public class ChatScreen extends AppCompatActivity {
     private TextView response, aiResponse;
     private ScrollView messages;
     private String typing = "typing...";
-    private String testName = getIntent().getStringExtra("name");
-    private String password = getIntent().getStringExtra("password");
+    private String testName;
+    private String password;
 
 
     @Override
@@ -53,13 +53,16 @@ public class ChatScreen extends AppCompatActivity {
         message = findViewById(R.id.etMessage);
         response = findViewById(R.id.tvResponse);
         messages = findViewById(R.id.svMessages);
+        testName = getIntent().getStringExtra("name");
 
+        password = getIntent().getStringExtra("password");
 
 
 //        testConnection("hi");
     }
 
     public void testConnection(String userMessage) {
+        
 
         RequestQueue rq = Volley.newRequestQueue(this); //Creating a RequestQueue Object
         String URL = "http://10.0.2.2:8080/"; //Storing the URL needed to hit the endpoint
