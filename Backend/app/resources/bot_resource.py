@@ -12,6 +12,7 @@ from flask_restful import Resource
 
 cwd = os.getcwd()
 
+# loads in necessary data to load bot
 with open(cwd + "/app/bot/data.json") as data:
     data = json.load(data)
     training = numpy.array(data['training'])
