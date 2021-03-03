@@ -37,7 +37,7 @@ Once you have Android Studio installed with a working emulator open up the front
 
 ## Usage
 
-With both services started up you can continue through the main screen as a guest (authorization is not implemented at this point in time) and begin conversing with the bot.
+With both services started up you can continue through the main screen as a guest or create an account and begin conversing with the bot.
 
 If you would like to access the API through a request service such as [Postman](https://www.postman.com/) or [Insomnia](https://insomnia.rest/) you may do the following:
 
@@ -48,4 +48,11 @@ If you would like to access the API through a request service such as [Postman](
 }
 ``` 
 - Note even though the API will say it's running on port 5000 in the docker container it is being routed through a NGINX load balancer listening on port 8080.
-
+- The API is secured using HTTP Basic if you would like to create an accound you can send a POST request to http://localhost:8080/create-user with a JSON body formatted as follows
+```json
+{
+    "username":"<your username>",
+    "password":"<your password>"
+}
+```
+- If you do not wish to create an account you may use the following credentials to send request: Username - guest, Password - guest
