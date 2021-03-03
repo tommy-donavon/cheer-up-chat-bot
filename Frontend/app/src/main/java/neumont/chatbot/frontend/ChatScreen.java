@@ -62,8 +62,6 @@ public class ChatScreen extends AppCompatActivity {
     }
 
     public void testConnection(String userMessage) {
-        
-
         RequestQueue rq = Volley.newRequestQueue(this); //Creating a RequestQueue Object
         String URL = "http://10.0.2.2:8080/"; //Storing the URL needed to hit the endpoint
         JSONObject jb = new JSONObject(); //Creating a JSONObject object to store messages

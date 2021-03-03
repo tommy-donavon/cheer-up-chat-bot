@@ -65,7 +65,7 @@ with open("intents.json") as f:
     #Load training data to bot
     model = Bot(training=training, output=output)
     #Shows training data to bot a repeated number of time. n_epoch refers to the amount of times the data is shown.
-    model.model.fit(training, output, n_epoch=1000, batch_size=8,show_metric=True)
+    model.model.fit(training, output, n_epoch=1, batch_size=8,show_metric=True)
     #Saves model to it's own file
     model.model.save("model.tflearn")
     
