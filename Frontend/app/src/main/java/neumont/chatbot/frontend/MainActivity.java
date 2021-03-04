@@ -99,50 +99,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void signUpOnClick(View view) {
-        Intent intent = new Intent(this, ChatHistory.class);
-        String userNameTxt = username.getText().toString();
-        String passwordTxt = password.getText().toString();
-        RequestQueue rq = Volley.newRequestQueue(this);
-        String URL = "http://10.0.2.2:8080/create-user";
-        JSONObject jBody = new JSONObject();
-        try {
-            jBody.put("username", userNameTxt);
-            jBody.put("password", passwordTxt);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        JsonObjectRequest jr = new JsonObjectRequest(Request.Method.POST, URL, jBody, response ->
-        {
-
-            intent.putExtra("name", userNameTxt);
-            intent.putExtra("password", passwordTxt);
-
-            startActivity(intent);
-        }, error -> {
-            Log.e("Error", error.toString());
-            username.setHintTextColor(Color.RED);
-            password.setHintTextColor(Color.RED);
-
-            username.setHint("Invalid Username");
-            password.setHint("Invalid Password");
-
-            username.setText("");
-            password.setText("");
-        }) {
-            @Override
-            protected Response<JSONObject> parseNetworkResponse(NetworkResponse response) {
-                if (response.data == null || response.data.length == 0) {
-                    return Response.success(null, HttpHeaderParser.parseCacheHeaders(response));
-                } else {
-
-                    return super.parseNetworkResponse(response);
-                }
-
-            }
-        };
-
-        rq.add(jr);
-
+        Intent intent = new Intent(this, SignUpScreen.class);
+        startActivity(intent);
 
     }
 
