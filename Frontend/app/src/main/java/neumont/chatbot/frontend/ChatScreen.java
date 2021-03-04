@@ -41,8 +41,9 @@ public class ChatScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
-            this.getSupportActionBar().hide(); //Hides the action bar to optimize more space
-        } catch (NullPointerException e) { //Catching the possibility of a Null value
+            //Hides the action bar to optimize more space
+            this.getSupportActionBar().hide();
+        } catch (NullPointerException e) {
             e.printStackTrace();
         }
         setContentView(R.layout.activity_chat_screen);
@@ -51,6 +52,8 @@ public class ChatScreen extends AppCompatActivity {
         message = findViewById(R.id.etMessage);
         response = findViewById(R.id.tvResponse);
         messages = findViewById(R.id.svMessages);
+
+        //Checking for a Guest User
         if (getIntent().getStringExtra("name") == null || getIntent().getStringExtra("password") == null) {
             testName = "guest";
             password = "guest";
@@ -67,29 +70,38 @@ public class ChatScreen extends AppCompatActivity {
 
 
     public void testConnection(String userMessage) {
-        RequestQueue rq = Volley.newRequestQueue(this); //Creating a RequestQueue Object
-        String URL = "http://10.0.2.2:8080/"; //Storing the URL needed to hit the endpoint
-        JSONObject jb = new JSONObject(); //Creating a JSONObject object to store messages
+        //Creating a JsonObject connection with the bot
+        RequestQueue rq = Volley.newRequestQueue(this);
+        String URL = "http://10.0.2.2:8080/";
+        JSONObject jb = new JSONObject();
         try {
-            jb.put("message", userMessage); //Populating JSONObject with a key and the user's message
-        } catch (JSONException e) { //Catching the possibility of a JSONException
+            //Populating JSONObject with a key and the user's message
+            jb.put("message", userMessage);
+        } catch (JSONException e) {
             e.printStackTrace();
         }
-        JsonObjectRequest jr = new JsonObjectRequest(Request.Method.POST, URL, jb, response -> { //Creating a JsonObjectRequest object to connect to the AI
+        //Creating a JsonObjectRequest object to connect to the AI
+        JsonObjectRequest jr = new JsonObjectRequest(Request.Method.POST, URL, jb, response -> {
             try {
-                System.out.println(response); //Printing the message in console for testing
-                String ok = (String) response.get("bot");//Getting the message
+                System.out.println(response);
+
+                //Getting the message and the user's name
+                String ok = (String) response.get("bot");
                 if (ok.contains("%s")) {
                     ok = String.format(ok, testName);
                 }
-                TimeUnit.SECONDS.sleep(2); //Timer to simulate the Bot thinking of the best response
-                this.response.append("Bot: " + ok + "\n\n"); //Appending to the TextView to show the conversations
 
-            } catch (JSONException | InterruptedException e) { //Catching the possibility of a JSON or Interrupted Exception
+                //Timer to simulate the Bot thinking of the best response
+                TimeUnit.SECONDS.sleep(2);
+                this.response.append("Bot: " + ok + "\n\n");
+
+            } catch (JSONException | InterruptedException e) {
                 e.printStackTrace();
             }
 
         }, error -> Log.e("error: ", error.toString())) {
+
+            //Providing authorization of users
             @Override
             public Map<String, String> getHeaders() {
                 String creds = testName + ":" + password;
@@ -98,31 +110,36 @@ public class ChatScreen extends AppCompatActivity {
                 headers.put("Authorization", "Basic " + encode);
                 return headers;
             }
-        }; //Printing the error in case there is one
-        rq.add(jr); //Adding the JSON request to the RequestQueue
+        };
+        rq.add(jr);
 
     }
 
     public void submitMessage(View view) {
-        String messageText = message.getText().toString(); //Getting the user's input from an EditText
-        testConnection(messageText); //Calling the testConnection method to connect the bot with the user's text
+        //Getting the user's input from an EditText
+        String messageText = message.getText().toString();
 
-        response.append("(" + testName + ")" + ": " + messageText + "\n" + typing + "\n"); //Appending to the TextView to show the conversations
+        //Calling the testConnection method to connect the bot with the user's text
+        testConnection(messageText);
 
-        message.setText(""); //Resetting the the EditText to empty
+        response.append("(" + testName + ")" + ": " + messageText + "\n" + typing + "\n");
+
+        message.setText("");
     }
 
     public void clearMessages(View view) {
-        response.setText(""); //Resetting the TextView that shows the conversations to empty
+        response.setText("");
     }
 
     public void backToChatHistoryScreen(View view) {
-        Intent intent = new Intent(this, ChatHistory.class); //Creating Intent object to switch to the Chat History Screen
-        startActivity(intent); //Executing the event
+        //Creating Intent object to switch to the Chat History Screen
+        Intent intent = new Intent(this, ChatHistory.class);
+        startActivity(intent);
     }
 
     public void backToHomeScreen(View view) {
-        Intent intent = new Intent(this, MainActivity.class); //Creating Intent object to switch to the Main Login Screen
-        startActivity(intent); //Executing the event
+        //Creating Intent object to switch to the Main Login Screen
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

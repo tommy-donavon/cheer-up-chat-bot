@@ -39,8 +39,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         try {
-            this.getSupportActionBar().hide(); //Hides the action bar to optimize more space
-        } catch (NullPointerException e) { //Catching the possibility of a Null value
+            //Hides the action bar to optimize more space
+            this.getSupportActionBar().hide();
+        } catch (NullPointerException e) {
             e.printStackTrace();
         }
         super.onCreate(savedInstanceState);
@@ -54,13 +55,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void continueAsGuestOnClick(View view) {
-        Intent intent = new Intent(this, ChatScreen.class); //Creating Intent object to switch to the Chat Screen
-        startActivity(intent); //Executing the event
+        //Creating Intent object to switch to the Chat Screen
+        Intent intent = new Intent(this, ChatScreen.class);
+        startActivity(intent);
     }
 
     public void signInOnClick(View view) {
+        //Creating Intent object to switch to the Chat History Screen
         Intent intent = new Intent(this, ChatHistory.class);
 
+        //Getting username and password from the SignUp Screen
         String userNameTxt = username.getText().toString();
         String passwordTxt = password.getText().toString();
         RequestQueue rq = Volley.newRequestQueue(this);
@@ -85,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
             password.setText("");
         }) {
 
+            //Providing authorization of users
             @Override
             public Map<String, String> getHeaders() {
                 String creds = userNameTxt + ":" + passwordTxt;
@@ -99,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void signUpOnClick(View view) {
+        //Creating Intent object to switch to the SignUp Screen
         Intent intent = new Intent(this, SignUpScreen.class);
         startActivity(intent);
 

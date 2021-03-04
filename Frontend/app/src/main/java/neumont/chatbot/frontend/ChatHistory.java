@@ -27,55 +27,66 @@ public class ChatHistory extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
-            this.getSupportActionBar().hide(); //Hides the action bar to optimize more space
-        } catch (NullPointerException e) { //Catching the possibility of a Null value
+            //Hides the action bar to optimize more space
+            this.getSupportActionBar().hide();
+        } catch (NullPointerException e) {
             e.printStackTrace();
         }
         setContentView(R.layout.activity_chat_history);
 
-        chatLayout = findViewById(R.id.chatLinearLayout); //Finding the LinearLayout object by it's Id for reference later in code
+        //Finding the LinearLayout object by it's Id for reference later in code
+        chatLayout = findViewById(R.id.chatLinearLayout);
+
+        //Getting info from previous Login screen
         testName = getIntent().getStringExtra("name");
         password = getIntent().getStringExtra("password");
     }
 
     public void backToHomeScreen(View view) {
-        Intent intent = new Intent(this, MainActivity.class); //Creating Intent object to switch to the Main Login Screen
-        startActivity(intent); //Executing the event
+        //Creating Intent object to switch to the Main Login Screen
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
 
     public void backToChatScreen(View view) {
         try {
-            TimeUnit.MILLISECONDS.sleep(1000); //Adding sleeper to avoid spamming the create chat button
-        } catch (InterruptedException e) { //Catching the possibility of the timer being interrupted
+            //Adding sleeper to avoid spamming the create chat button
+            TimeUnit.MILLISECONDS.sleep(1000);
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
         Intent intent = new Intent(this, ChatScreen.class);
 
+        //Passing info through screens
         intent.putExtra("name", testName);
         intent.putExtra("password", password);
-        String btnText = "New Chat Here!"; //Text to be placed in button
 
+        //Text to be placed in button
+        String btnText = "New Chat Here!";
 
-        Button newChat = new Button(this); // Creating a new Button Object
-        newChat.setText(btnText); // Setting the text of the Button
-        newChat.setTextColor(Color.WHITE); // Setting the color of the text
+        // Creating a new Button Object
+        Button newChat = new Button(this);
+        newChat.setText(btnText);
+        newChat.setTextColor(Color.WHITE);
 
+        //Creating a new Space Object to act as a divider
+        Space space = new Space(this);
+        space.setMinimumHeight(100);
 
-        Space space = new Space(this); //Creating a new Space Object to act as a divider
-        space.setMinimumHeight(100); // Setting the height of that divider
-
-        newChat.setBackgroundResource(R.drawable.custom_circle); // Setting up the style for the buttons
+        // Setting up the style for the buttons
+        newChat.setBackgroundResource(R.drawable.custom_circle);
         newChat.setPadding(15, 15, 15, 15);
 
         // Adding an Onclick for each button created to go to the Chat Screen
         newChat.setOnClickListener(view1 -> {
 
-            startActivity(intent); //Executing the event
+            startActivity(intent);
         });
 
-        chatLayout.addView(space); //Adding the Space object into the ScrollView
-        chatLayout.addView(newChat); //Adding the Button object into the ScrollView
+        //Adding objects into the ScrollView
+        chatLayout.addView(space);
+        chatLayout.addView(newChat);
 
 
     }

@@ -29,14 +29,16 @@ public class SignUpScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //Hides the action bar to optimize more space
         try {
-            this.getSupportActionBar().hide(); //Hides the action bar to optimize more space
-        } catch (NullPointerException e) { //Catching the possibility of a Null value
+            this.getSupportActionBar().hide();
+        } catch (NullPointerException e) {
             e.printStackTrace();
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_screen2);
 
+        //Finding UI elements by their Id
         username = findViewById(R.id.etSignUpUsername);
         email = findViewById(R.id.etSignUpEmail);
         password = findViewById(R.id.etSignUpPassword);
@@ -48,14 +50,17 @@ public class SignUpScreen extends AppCompatActivity {
 
 
     public void createUserOnClick(View view) {
-        Intent intent = new Intent(this, MainActivity.class); //Creating Intent object to switch to the Main Login Screen
+        //Creating Intent object to switch to the Main Login Screen
+        Intent intent = new Intent(this, MainActivity.class);
+
+        //Getting the text from EditTexts
         String userNameTxt = username.getText().toString();
         String emailTxt = email.getText().toString();
         String passwordTxt = password.getText().toString();
         String reEnterPasswordTxt = reEnterPassword.getText().toString();
 
-
-        if(userNameTxt.equals("") || emailTxt.equals("") || passwordTxt.equals("") || reEnterPasswordTxt.equals("")){
+        //Checking for blank EditTexts
+        if (userNameTxt.equals("") || emailTxt.equals("") || passwordTxt.equals("") || reEnterPasswordTxt.equals("")) {
 
             username.setHintTextColor(Color.RED);
             username.setHint(blankErrorMessage);
@@ -68,8 +73,9 @@ public class SignUpScreen extends AppCompatActivity {
 
             reEnterPassword.setHintTextColor(Color.RED);
             reEnterPassword.setHint(blankErrorMessage);
-        }else{
+        } else {
 
+            //Checking to see if both passwords match
             if (!passwordTxt.equals(reEnterPasswordTxt)) {
                 password.setHintTextColor(Color.RED);
                 password.setHint(passwordMismatchMessage);
@@ -79,6 +85,8 @@ public class SignUpScreen extends AppCompatActivity {
                 reEnterPassword.setHint(passwordMismatchMessage);
                 reEnterPassword.setText("");
             } else {
+
+                //Creating the user
                 RequestQueue rq = Volley.newRequestQueue(this);
                 String URL = "http://10.0.2.2:8080/create-user";
                 JSONObject jBody = new JSONObject();
@@ -116,10 +124,10 @@ public class SignUpScreen extends AppCompatActivity {
         }
 
 
-
     }
 
     public void backToLogin(View view) {
+        //Creating Intent object to switch back to Login screen
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
