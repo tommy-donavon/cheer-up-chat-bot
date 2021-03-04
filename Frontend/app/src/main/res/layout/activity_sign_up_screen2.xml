@@ -12,13 +12,28 @@
         android:layout_width="139dp"
         android:layout_height="73dp"
         android:background="@drawable/circle"
+        android:onClick="backToLogin"
+        android:text="Already a Member?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.128"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.79" />
+
+    <Button
+        android:id="@+id/btnConfirmSignUp"
+        android:layout_width="139dp"
+        android:layout_height="73dp"
+        android:background="@drawable/circle"
         android:onClick="createUserOnClick"
         android:text="Confirm Sign-Up Here"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.852"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.775" />
+        app:layout_constraintVertical_bias="0.79" />
 
     <EditText
         android:id="@+id/etSignUpUsername"
@@ -89,6 +104,7 @@
         android:layout_width="413dp"
         android:layout_height="79dp"
         android:background="#000000"
+        android:fontFamily="@font/abril_fatface"
         android:gravity="center"
         android:text="Sign-Up Today!"
         android:textColor="#FFFFFF"

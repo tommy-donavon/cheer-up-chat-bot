@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.android.volley.NetworkResponse;
@@ -22,14 +23,15 @@ import org.json.JSONObject;
 
 public class SignUpScreen extends AppCompatActivity {
     private EditText username, email, password, reEnterPassword;
+    private Button confirmSignUp;
+    private String blankErrorMessage = "Can't leave blank!";
+    private String passwordMismatchMessage = "Passwords don't match!";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        try
-        {
+        try {
             this.getSupportActionBar().hide(); //Hides the action bar to optimize more space
-        }
-        catch (NullPointerException e){ //Catching the possibility of a Null value
+        } catch (NullPointerException e) { //Catching the possibility of a Null value
             e.printStackTrace();
         }
         super.onCreate(savedInstanceState);
@@ -39,6 +41,9 @@ public class SignUpScreen extends AppCompatActivity {
         email = findViewById(R.id.etSignUpEmail);
         password = findViewById(R.id.etSignUpPassword);
         reEnterPassword = findViewById(R.id.etSignUpPasswordCheck);
+
+        confirmSignUp = findViewById(R.id.btnConfirmSignUp);
+
     }
 
 
@@ -49,51 +54,73 @@ public class SignUpScreen extends AppCompatActivity {
         String passwordTxt = password.getText().toString();
         String reEnterPasswordTxt = reEnterPassword.getText().toString();
 
-        if(!passwordTxt.equals(reEnterPasswordTxt)){
+
+        if(userNameTxt.equals("") || emailTxt.equals("") || passwordTxt.equals("") || reEnterPasswordTxt.equals("")){
+
+            username.setHintTextColor(Color.RED);
+            username.setHint(blankErrorMessage);
+
             password.setHintTextColor(Color.RED);
-            password.setHint("Passwords don't match");
-            password.setText("");
+            password.setHint(blankErrorMessage);
+
+            email.setHintTextColor(Color.RED);
+            email.setHint(blankErrorMessage);
 
             reEnterPassword.setHintTextColor(Color.RED);
-            reEnterPassword.setHint("Passwords don't match");
-            reEnterPassword.setText("");
+            reEnterPassword.setHint(blankErrorMessage);
         }else{
-            RequestQueue rq = Volley.newRequestQueue(this);
-            String URL = "http://10.0.2.2:8080/create-user";
-            JSONObject jBody = new JSONObject();
-            try {
-                jBody.put("username", userNameTxt);
-                jBody.put("password", passwordTxt);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            JsonObjectRequest jr = new JsonObjectRequest(Request.Method.POST, URL, jBody, response ->
-            {
 
-                intent.putExtra("name", userNameTxt);
-                intent.putExtra("password", passwordTxt);
+            if (!passwordTxt.equals(reEnterPasswordTxt)) {
+                password.setHintTextColor(Color.RED);
+                password.setHint(passwordMismatchMessage);
+                password.setText("");
 
-                startActivity(intent);
-            }, error -> {
-                Log.e("Error", error.toString());
-
-            }) {
-                @Override
-                protected Response<JSONObject> parseNetworkResponse(NetworkResponse response) {
-                    if (response.data == null || response.data.length == 0) {
-                        return Response.success(null, HttpHeaderParser.parseCacheHeaders(response));
-                    } else {
-
-                        return super.parseNetworkResponse(response);
-                    }
-
+                reEnterPassword.setHintTextColor(Color.RED);
+                reEnterPassword.setHint(passwordMismatchMessage);
+                reEnterPassword.setText("");
+            } else {
+                RequestQueue rq = Volley.newRequestQueue(this);
+                String URL = "http://10.0.2.2:8080/create-user";
+                JSONObject jBody = new JSONObject();
+                try {
+                    jBody.put("username", userNameTxt);
+                    jBody.put("password", passwordTxt);
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
-            };
+                JsonObjectRequest jr = new JsonObjectRequest(Request.Method.POST, URL, jBody, response ->
+                {
 
-            rq.add(jr);
+                    intent.putExtra("name", userNameTxt);
+                    intent.putExtra("password", passwordTxt);
+
+                    startActivity(intent);
+                }, error -> {
+                    Log.e("Error", error.toString());
+
+                }) {
+                    @Override
+                    protected Response<JSONObject> parseNetworkResponse(NetworkResponse response) {
+                        if (response.data == null || response.data.length == 0) {
+                            return Response.success(null, HttpHeaderParser.parseCacheHeaders(response));
+                        } else {
+
+                            return super.parseNetworkResponse(response);
+                        }
+
+                    }
+                };
+
+                rq.add(jr);
+            }
         }
 
 
 
+    }
+
+    public void backToLogin(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

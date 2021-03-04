@@ -54,8 +54,7 @@ public class ChatScreen extends AppCompatActivity {
         if (getIntent().getStringExtra("name") == null || getIntent().getStringExtra("password") == null) {
             testName = "guest";
             password = "guest";
-        }else
-        {
+        } else {
 
             testName = getIntent().getStringExtra("name");
             password = getIntent().getStringExtra("password");
@@ -108,7 +107,7 @@ public class ChatScreen extends AppCompatActivity {
         String messageText = message.getText().toString(); //Getting the user's input from an EditText
         testConnection(messageText); //Calling the testConnection method to connect the bot with the user's text
 
-        response.append("User: " + messageText + "\n" + typing + "\n"); //Appending to the TextView to show the conversations
+        response.append("(" + testName + ")" + ": " + messageText + "\n" + typing + "\n"); //Appending to the TextView to show the conversations
 
         message.setText(""); //Resetting the the EditText to empty
     }

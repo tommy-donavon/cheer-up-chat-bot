@@ -19,18 +19,16 @@ import java.util.Timer;
 import java.util.concurrent.TimeUnit;
 
 public class ChatHistory extends AppCompatActivity {
-   private LinearLayout chatLayout;
+    private LinearLayout chatLayout;
     private String testName;
     private String password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        try
-        {
+        try {
             this.getSupportActionBar().hide(); //Hides the action bar to optimize more space
-        }
-        catch (NullPointerException e){ //Catching the possibility of a Null value
+        } catch (NullPointerException e) { //Catching the possibility of a Null value
             e.printStackTrace();
         }
         setContentView(R.layout.activity_chat_history);
@@ -62,13 +60,13 @@ public class ChatHistory extends AppCompatActivity {
         Button newChat = new Button(this); // Creating a new Button Object
         newChat.setText(btnText); // Setting the text of the Button
         newChat.setTextColor(Color.WHITE); // Setting the color of the text
-        
+
 
         Space space = new Space(this); //Creating a new Space Object to act as a divider
         space.setMinimumHeight(100); // Setting the height of that divider
 
         newChat.setBackgroundResource(R.drawable.custom_circle); // Setting up the style for the buttons
-        newChat.setPadding(15,15,15,15);
+        newChat.setPadding(15, 15, 15, 15);
 
         // Adding an Onclick for each button created to go to the Chat Screen
         newChat.setOnClickListener(view1 -> {
@@ -78,8 +76,6 @@ public class ChatHistory extends AppCompatActivity {
 
         chatLayout.addView(space); //Adding the Space object into the ScrollView
         chatLayout.addView(newChat); //Adding the Button object into the ScrollView
-
-
 
 
     }
