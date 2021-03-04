@@ -1,6 +1,12 @@
 # Cheer-Up ChatBot
 
 Cheer-Up ChatBot is a school project designed to utilize machine learning basics to analyze user text.
+### Authors
+- [Tommy Donavon](https://github.com/yhung-mea7)
+- [Odin Nakasone](https://github.com/OdinNakasone)
+- [Reece Zarkowski](https://github.com/JordanR5a)
+- [Justin Spurlock](https://github.com/SpurlockWorkspace)
+- [Mason Bradford](https://github.com/masonbrad831)
 
 ## Installation
 
