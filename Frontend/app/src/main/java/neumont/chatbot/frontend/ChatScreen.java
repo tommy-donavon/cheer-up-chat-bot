@@ -40,11 +40,9 @@ public class ChatScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        try
-        {
+        try {
             this.getSupportActionBar().hide(); //Hides the action bar to optimize more space
-        }
-        catch (NullPointerException e){ //Catching the possibility of a Null value
+        } catch (NullPointerException e) { //Catching the possibility of a Null value
             e.printStackTrace();
         }
         setContentView(R.layout.activity_chat_screen);
@@ -53,13 +51,21 @@ public class ChatScreen extends AppCompatActivity {
         message = findViewById(R.id.etMessage);
         response = findViewById(R.id.tvResponse);
         messages = findViewById(R.id.svMessages);
-        testName = getIntent().getStringExtra("name");
+        if (getIntent().getStringExtra("name") == null || getIntent().getStringExtra("password") == null) {
+            testName = "guest";
+            password = "guest";
+        }else
+        {
 
-        password = getIntent().getStringExtra("password");
+            testName = getIntent().getStringExtra("name");
+            password = getIntent().getStringExtra("password");
+        }
+//
 
 
 //        testConnection("hi");
     }
+
 
     public void testConnection(String userMessage) {
         RequestQueue rq = Volley.newRequestQueue(this); //Creating a RequestQueue Object
@@ -74,8 +80,7 @@ public class ChatScreen extends AppCompatActivity {
             try {
                 System.out.println(response); //Printing the message in console for testing
                 String ok = (String) response.get("bot");//Getting the message
-                if(ok.contains("%s"))
-                {
+                if (ok.contains("%s")) {
                     ok = String.format(ok, testName);
                 }
                 TimeUnit.SECONDS.sleep(2); //Timer to simulate the Bot thinking of the best response
@@ -85,7 +90,7 @@ public class ChatScreen extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-        }, error -> Log.e("error: ", error.toString())){
+        }, error -> Log.e("error: ", error.toString())) {
             @Override
             public Map<String, String> getHeaders() {
                 String creds = testName + ":" + password;
