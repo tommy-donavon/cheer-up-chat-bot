@@ -281,9 +281,7 @@
       "responses": [
         "Great! Glad to hear that!",
         "If you're happy, then I'm happy:)",
-        "Excellent! That's what I like to hear!",
-        "Thats great whats making you so happy?",
-        "Being happy is the best!"
+        "Excellent! That's what I like to hear!"
       ]
     },
     {
@@ -377,7 +375,7 @@
         "Sometimes I feel like that too. Do you want to talk about it?",
         "I may not be real but I'm still your friend",
         "We can always talk if you think that would make you feel better",
-        "Life is hard sometimes, remember that these times will eventually pass",
+        "Remember that these times will eventually pass",
         "You're not alone, I am here for you"
       ]
     },
@@ -426,7 +424,7 @@
         "Why are you so stupid?"
       ],
       "responses":[
-        "I'm sorry if I offended:(",
+        "I'm sorry if I offended you:(",
         "Hopefully we can get along better in the future:)",
         "Do you need a moment to calm down?",
         "It's okay! I don't even have feelings!!"
@@ -455,6 +453,7 @@
         "I'm sad",
         "I'm depressed",
         "I feel down",
+        "I feel bad",
         "I'm feeling bummed",
         "I'm not happy",
         "I'm having a bad day",

@@ -25,11 +25,11 @@ for intent_class in intents['intents']:
 # Stem words and sort them
 all_data_words = [stem(w) for w in all_data_words if w not in exclude_chars]
 all_data_words = sorted(set(all_data_words))
-
-print(len(all_data_words))
 data_tags = sorted(set(data_tags))
+
 training_data, output_data = [], []
 
+# Stage training data
 out_default = [0 for _ in range(len(data_tags))]
 
 for(pattern, tag) in word_and_tags:
@@ -54,7 +54,9 @@ ops.reset_default_graph()
 
 # Load training data to bot
 model = Bot(training=training_data, output=output_data)
-# Shows training data to bot a repeated number of time. n_epoch refers to the amount of times the data is shown.
+
+# Shows training data to bot a repeated number of times. n_epoch refers to the amount of steps the process will take.
 model.model.fit(training_data, output_data, n_epoch=1000, batch_size=8,show_metric=True)
+
 # Saves model to it's own file
 model.model.save("model.tflearn")
