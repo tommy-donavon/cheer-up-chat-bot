@@ -1,68 +1,60 @@
 import numpy
 import json
-
 from bot import Bot
-from nltk_utils import tokenize, stem
+from NLU import tokenize, stem, word_bag
 from tensorflow.python.framework import ops
 
 #import training data and add them to corresponding lists
 with open("intents.json") as f:
-    data = json.load(f)
+    intents = json.load(f)
 
-    all_data_words, data_tags, doc_words, doc_tags = [], [], [], []
+all_data_words, data_tags, word_and_tags = [], [], []
+exclude_chars = ['?', '!', '.', ',']
 
-    banned_chars = ['?', '!', '.', ',']
 
-    for intent in data['intents']:
-        for pattern in intent['patterns']:
-            words = tokenize(pattern)
-            all_data_words.extend(words)
-            doc_words.append(words)
-            doc_tags.append(intent['tag'])
-        if intent['tag'] not in data_tags:
-            data_tags.append(intent['tag'])
+for intent_class in intents['intents']:
     
-    # Stem words and sort them
-    all_data_words = [stem(w.lower()) for w in all_data_words if w not in banned_chars]
-    all_data_words = sorted(list(set(all_data_words)))
-
-    data_tags = sorted(data_tags)
-
-    training = []
-    output = []
-
-    out_default = [0 for _ in range(len(data_tags))]
-
-# Arrange data for training the bot
-    for x, doc in enumerate(doc_words):
-        bag = [0 for _ in range(len(all_data_words))]
-        b_words = [stem(w.lower()) for w in doc]
-        for index, word in enumerate(all_data_words):
-            if word in b_words:
-                bag[index] = 1
+    data_tags.append(intent_class['tag'])
+    
+    for pattern in intent_class['patterns']:
         
-        output_row = out_default[:]
-        output_row[data_tags.index(doc_tags[x])] = 1
-
-        training.append(bag)
-        output.append(output_row)
+        words = tokenize(pattern)
+        all_data_words.extend(words)
+        word_and_tags.append((words, intent_class['tag']))
     
-    #Save processed data to json file for later use
-    data = {"training": training, "output": output, "all_words": all_data_words, "tags": data_tags}
-    with open("data.json", "w") as save_data:
-        json.dump(data, save_data)
+# Stem words and sort them
+all_data_words = [stem(w) for w in all_data_words if w not in exclude_chars]
+all_data_words = sorted(set(all_data_words))
+
+print(len(all_data_words))
+data_tags = sorted(set(data_tags))
+training_data, output_data = [], []
+
+out_default = [0 for _ in range(len(data_tags))]
+
+for(pattern, tag) in word_and_tags:
+    bag = word_bag(pattern, all_data_words)
+    training_data.append(bag)
+    output_row = out_default[:]
+    out_index = data_tags.index(tag)
+    output_row[out_index] = 1
+    output_data.append(output_row)
+
+#Save processed data to json file for later use
+data = {"training": training_data, "output": output_data, "all_words": all_data_words, "tags": data_tags}
+with open("data.json", "w") as save_data:
+    json.dump(data, save_data)
 
 
-    training = numpy.array(training)
-    output = numpy.array(output)
+training_data = numpy.array(training_data)
+output_data = numpy.array(output_data)
 
-    ops.reset_default_graph()
+ops.reset_default_graph()
 
 
-    #Load training data to bot
-    model = Bot(training=training, output=output)
-    #Shows training data to bot a repeated number of time. n_epoch refers to the amount of times the data is shown.
-    model.model.fit(training, output, n_epoch=1000, batch_size=8,show_metric=True)
-    #Saves model to it's own file
-    model.model.save("model.tflearn")
-    
+# Load training data to bot
+model = Bot(training=training_data, output=output_data)
+# Shows training data to bot a repeated number of time. n_epoch refers to the amount of times the data is shown.
+model.model.fit(training_data, output_data, n_epoch=1000, batch_size=8,show_metric=True)
+# Saves model to it's own file
+model.model.save("model.tflearn")

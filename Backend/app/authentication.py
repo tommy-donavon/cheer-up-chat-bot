@@ -32,7 +32,6 @@ def verify_password(username, password):
     except DoesNotExist:
         return False
     if check_password_hash(pwhash=user.password, password=password):
-        print('checkpoint')
         return user
 
 

@@ -52,8 +52,8 @@
       "responses": [
         "Hi %s how are you feeling today:)",
         "Good to see you again %s! How are you doing?",
-        "Hi there %s, how can I help?",
-        "Why hello there %s, anything I can help yo with?"
+        "Hi there %s, how are you doing:)",
+        "Why hello there %s, How are you feeling?"
       ]
     },
     {
@@ -66,8 +66,6 @@
         "I hope I will see you later",
         "See ya later alligator",
         "Goodbye",
-        "I say goodye",
-        "Goodbye, have a nice day",
         "bye have a nice day",
         "I hope you have a nice day",
         "I wish you a good day",
@@ -285,8 +283,7 @@
         "If you're happy, then I'm happy:)",
         "Excellent! That's what I like to hear!",
         "Thats great whats making you so happy?",
-        "Being happy is the best!",
-        "You being happy makes me happy even though I don't have any feelings"
+        "Being happy is the best!"
       ]
     },
     {
@@ -299,7 +296,7 @@
         "I feel agitated",
         "I'm eager",
         "I feel enthusiastic",
-        "I feel systerical",
+        "I feel hysterical",
         "I feel passionate",
         "I feel animated",
         "I am ruffled",
@@ -320,8 +317,7 @@
       "responses": [
         "I'm glad things are going your way right now",
         "Good for you!",
-        "That's great. I'm happy for you!:)",
-        "Awesome. Tell me whats making you so exited"
+        "That's great. I'm happy for you!:)"
       ]
     },
     {
@@ -333,7 +329,7 @@
         "I'm upset",
         "I feel fury",
         "I am furious",
-        "I am indignate",
+        "I am indignant",
         "you have some gall",
         "I feel like huffing",
         "I want to hit something",
@@ -342,7 +338,7 @@
         "I feel miffed",
         "I feel tiffed",
         "I am in a tiff",
-        "I feel vexated",
+        "I feel vexed",
         "I'm outrage",
         "I am peeved off",
         "I feel resentment",
@@ -430,11 +426,10 @@
         "Why are you so stupid?"
       ],
       "responses":[
-        "Don't be so mean!",
-        "Have I offended you? Sorry, I didn't mean to",
-        "Calm yourself! No need to be so aggressive, it isn't healthy for you fleshbags to experience so much stress.",
-        "...Sorry?",
-        "Do you need a moment to calm down?"
+        "I'm sorry if I offended:(",
+        "Hopefully we can get along better in the future:)",
+        "Do you need a moment to calm down?",
+        "It's okay! I don't even have feelings!!"
       ]
     },
     {

@@ -5,7 +5,7 @@ import os
 
 from flask import request
 from bot.bot import Bot
-from bot import nltk_utils
+from bot import NLU
 from authentication import auth
 from flask_restful import Resource
 
@@ -43,9 +43,9 @@ class Bot_Resource(Resource):
    
         raw_data = request.json
         if 'message' in raw_data:
-            user_input = nltk_utils.tokenize( raw_data['message'] )
-            user_bag = nltk_utils.word_bag(user_input, all_words)
-            results = model.model.predict([user_bag])
+            user_input = NLU.tokenize( raw_data['message'] )
+            user_bag = NLU.word_bag(user_input, all_words)
+            results = model.model.predict([numpy.array(user_bag)])
             props = numpy.max(results)
             matching_index = numpy.argmax(results)
             tag = tags[matching_index]
