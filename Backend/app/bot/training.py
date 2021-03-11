@@ -9,10 +9,7 @@ from tensorflow.python.framework import ops
 with open("intents.json") as f:
     data = json.load(f)
 
-    all_data_words = []
-    data_tags = []
-    doc_words = []
-    doc_tags = []
+    all_data_words, data_tags, doc_words, doc_tags = [], [], [], []
 
     banned_chars = ['?', '!', '.', ',']
 

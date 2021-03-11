@@ -1,11 +1,18 @@
+import os
 from mongoengine import connect, Document, StringField
 from flask_httpauth import HTTPBasicAuth
 from mongoengine.errors import DoesNotExist
 from werkzeug.security import check_password_hash
 
 
-# Connects to Mongo Atlas cluster
-DB_URI = 'mongodb+srv://User:TWKUDY8qLS2Db0hE@cluster0.a8rpi.mongodb.net/se?retryWrites=true&w=majority'
+USER = os.environ.get("MONGO_USER")
+PWD = os.environ.get("MONGO_PASS")
+HOST = os.environ.get("MONGO_HOST")
+DATABASE = os.environ.get("MONGO_DATABASE")
+PORT = os.environ.get("MONGO_PORT")
+
+DB_URI = f'mongodb://{USER}:{PWD}@{HOST}:{PORT}/{DATABASE}?authSource=admin'
+
 db = connect(host=DB_URI)
 auth = HTTPBasicAuth()
 

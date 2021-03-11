@@ -6,14 +6,35 @@ services:
     build: .
     ports:
       - 5000
+    environment: 
+      - MONGO_USER=user
+      - MONGO_PASS=password
+      - MONGO_HOST=mongo
+      - MONGO_DATABASE=users
+      - MONGO_PORT=27017
     depends_on: 
       - nginx
+      - mongo
   nginx:
     image: nginx:latest 
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
     ports: 
       - 8080:8080
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    ports: 
+      - 27017:27017
+    environment: 
+      - MONGO_INITDB_ROOT_USERNAME=user
+      - MONGO_INITDB_ROOT_PASSWORD=password
+      - MONGO_INITDB_DATABASE=users
+    volumes: 
+      - mongodata:/data/db
+volumes: 
+  mongodata:
+
 
 
    
