@@ -11,7 +11,7 @@ def tokenize(sentence: str):
     
 def word_bag(token_sentence, words):
     """
-        proccesses text and comapres it to existing word data and prepares a list to show bot
+        proccesses text and comapres it to existing word data and prepares a word bag to show bot
     """
     token_sentence = [stem(w) for w in token_sentence]
     bag = [0 for _ in range(len(words))]
