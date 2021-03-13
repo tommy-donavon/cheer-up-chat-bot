@@ -61,4 +61,3 @@ If you would like to access the API through a request service such as [Postman](
     "password":"<your password>"
 }
 ```
-- If you do not wish to create an account you may use the following credentials to send request: Username - guest, Password - guest
